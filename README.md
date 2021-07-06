@@ -24,7 +24,6 @@
 
 ## Usage
 
-To use the API client with a HTTP proxy, setup a `System.Net.WebProxy`
 ```csharp
 var c = new Configuration();
 var userToken = "...";
