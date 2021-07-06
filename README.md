@@ -18,13 +18,17 @@
 - [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) - 12.0.3 or later
 - [JsonSubTypes](https://www.nuget.org/packages/JsonSubTypes/) - 1.8.0 or later
 
+## NuGet Repo
+
+- https://github.com/orgs/elements-storage/packages
+
 ## Usage
 
 To use the API client with a HTTP proxy, setup a `System.Net.WebProxy`
 ```csharp
 var c = new Configuration();
 var userToken = "...";
-c.BasePath = 'http://192.168.1.10'
+c.BasePath = "http://192.168.1.10"
 c.DefaultHeaders["Authorization"] = $"Bearer {userToken}";
 
 var workspaces = await new StorageApi(c).GetAllWorkspacesAsync()
