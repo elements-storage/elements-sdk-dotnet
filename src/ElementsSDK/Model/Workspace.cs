@@ -101,166 +101,160 @@ namespace ElementsSDK.Model
         public enum WinDriveEnum
         {
             /// <summary>
-            /// Enum Null for value: null
-            /// </summary>
-            [EnumMember(Value = "null")]
-            Null = 1,
-
-            /// <summary>
             /// Enum A for value: a
             /// </summary>
             [EnumMember(Value = "a")]
-            A = 2,
+            A = 1,
 
             /// <summary>
             /// Enum B for value: b
             /// </summary>
             [EnumMember(Value = "b")]
-            B = 3,
+            B = 2,
 
             /// <summary>
             /// Enum C for value: c
             /// </summary>
             [EnumMember(Value = "c")]
-            C = 4,
+            C = 3,
 
             /// <summary>
             /// Enum D for value: d
             /// </summary>
             [EnumMember(Value = "d")]
-            D = 5,
+            D = 4,
 
             /// <summary>
             /// Enum E for value: e
             /// </summary>
             [EnumMember(Value = "e")]
-            E = 6,
+            E = 5,
 
             /// <summary>
             /// Enum F for value: f
             /// </summary>
             [EnumMember(Value = "f")]
-            F = 7,
+            F = 6,
 
             /// <summary>
             /// Enum G for value: g
             /// </summary>
             [EnumMember(Value = "g")]
-            G = 8,
+            G = 7,
 
             /// <summary>
             /// Enum H for value: h
             /// </summary>
             [EnumMember(Value = "h")]
-            H = 9,
+            H = 8,
 
             /// <summary>
             /// Enum I for value: i
             /// </summary>
             [EnumMember(Value = "i")]
-            I = 10,
+            I = 9,
 
             /// <summary>
             /// Enum J for value: j
             /// </summary>
             [EnumMember(Value = "j")]
-            J = 11,
+            J = 10,
 
             /// <summary>
             /// Enum K for value: k
             /// </summary>
             [EnumMember(Value = "k")]
-            K = 12,
+            K = 11,
 
             /// <summary>
             /// Enum L for value: l
             /// </summary>
             [EnumMember(Value = "l")]
-            L = 13,
+            L = 12,
 
             /// <summary>
             /// Enum M for value: m
             /// </summary>
             [EnumMember(Value = "m")]
-            M = 14,
+            M = 13,
 
             /// <summary>
             /// Enum N for value: n
             /// </summary>
             [EnumMember(Value = "n")]
-            N = 15,
+            N = 14,
 
             /// <summary>
             /// Enum O for value: o
             /// </summary>
             [EnumMember(Value = "o")]
-            O = 16,
+            O = 15,
 
             /// <summary>
             /// Enum P for value: p
             /// </summary>
             [EnumMember(Value = "p")]
-            P = 17,
+            P = 16,
 
             /// <summary>
             /// Enum Q for value: q
             /// </summary>
             [EnumMember(Value = "q")]
-            Q = 18,
+            Q = 17,
 
             /// <summary>
             /// Enum R for value: r
             /// </summary>
             [EnumMember(Value = "r")]
-            R = 19,
+            R = 18,
 
             /// <summary>
             /// Enum S for value: s
             /// </summary>
             [EnumMember(Value = "s")]
-            S = 20,
+            S = 19,
 
             /// <summary>
             /// Enum T for value: t
             /// </summary>
             [EnumMember(Value = "t")]
-            T = 21,
+            T = 20,
 
             /// <summary>
             /// Enum U for value: u
             /// </summary>
             [EnumMember(Value = "u")]
-            U = 22,
+            U = 21,
 
             /// <summary>
             /// Enum V for value: v
             /// </summary>
             [EnumMember(Value = "v")]
-            V = 23,
+            V = 22,
 
             /// <summary>
             /// Enum W for value: w
             /// </summary>
             [EnumMember(Value = "w")]
-            W = 24,
+            W = 23,
 
             /// <summary>
             /// Enum X for value: x
             /// </summary>
             [EnumMember(Value = "x")]
-            X = 25,
+            X = 24,
 
             /// <summary>
             /// Enum Y for value: y
             /// </summary>
             [EnumMember(Value = "y")]
-            Y = 26,
+            Y = 25,
 
             /// <summary>
             /// Enum Z for value: z
             /// </summary>
             [EnumMember(Value = "z")]
-            Z = 27
+            Z = 26
 
         }
 

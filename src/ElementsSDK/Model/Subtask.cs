@@ -37,40 +37,34 @@ namespace ElementsSDK.Model
         public enum TriggerEnum
         {
             /// <summary>
-            /// Enum Null for value: null
-            /// </summary>
-            [EnumMember(Value = "null")]
-            Null = 1,
-
-            /// <summary>
             /// Enum Finish for value: finish
             /// </summary>
             [EnumMember(Value = "finish")]
-            Finish = 2,
+            Finish = 1,
 
             /// <summary>
             /// Enum Success for value: success
             /// </summary>
             [EnumMember(Value = "success")]
-            Success = 3,
+            Success = 2,
 
             /// <summary>
             /// Enum Warning for value: warning
             /// </summary>
             [EnumMember(Value = "warning")]
-            Warning = 4,
+            Warning = 3,
 
             /// <summary>
             /// Enum Error for value: error
             /// </summary>
             [EnumMember(Value = "error")]
-            Error = 5,
+            Error = 4,
 
             /// <summary>
             /// Enum Noop for value: noop
             /// </summary>
             [EnumMember(Value = "noop")]
-            Noop = 6
+            Noop = 5
 
         }
 

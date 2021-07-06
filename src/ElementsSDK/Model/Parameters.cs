@@ -125,6 +125,30 @@ namespace ElementsSDK.Model
         [DataMember(Name = "media_default_custom_field_type", EmitDefaultValue = false)]
         public MediaDefaultCustomFieldTypeEnum? MediaDefaultCustomFieldType { get; set; }
         /// <summary>
+        /// Defines MediaForceShowDeleted
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum MediaForceShowDeletedEnum
+        {
+            /// <summary>
+            /// Enum True for value: true
+            /// </summary>
+            True = true,
+
+            /// <summary>
+            /// Enum False for value: false
+            /// </summary>
+            False = false
+
+        }
+
+
+        /// <summary>
+        /// Gets or Sets MediaForceShowDeleted
+        /// </summary>
+        [DataMember(Name = "media_force_show_deleted", EmitDefaultValue = true)]
+        public MediaForceShowDeletedEnum? MediaForceShowDeleted { get; set; }
+        /// <summary>
         /// Defines MediaDefaultDeleteBehaviour
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -233,22 +257,16 @@ namespace ElementsSDK.Model
         public enum HttpsRedirectEnum
         {
             /// <summary>
-            /// Enum Null for value: null
-            /// </summary>
-            [EnumMember(Value = "null")]
-            Null = 1,
-
-            /// <summary>
             /// Enum Domain for value: domain
             /// </summary>
             [EnumMember(Value = "domain")]
-            Domain = 2,
+            Domain = 1,
 
             /// <summary>
             /// Enum On for value: on
             /// </summary>
             [EnumMember(Value = "on")]
-            On = 3
+            On = 2
 
         }
 
@@ -293,7 +311,6 @@ namespace ElementsSDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Parameters" /> class.
         /// </summary>
-        /// <param name="mediaForceShowDeleted">mediaForceShowDeleted.</param>
         /// <param name="analytics">analytics.</param>
         /// <param name="identifyCommand">identifyCommand.</param>
         /// <param name="externalUrl">http://host/.</param>
@@ -314,6 +331,7 @@ namespace ElementsSDK.Model
         /// <param name="mediaAutoVeritoneUpload">mediaAutoVeritoneUpload.</param>
         /// <param name="mediaProxyH264Preset">mediaProxyH264Preset.</param>
         /// <param name="mediaDefaultCustomFieldType">mediaDefaultCustomFieldType.</param>
+        /// <param name="mediaForceShowDeleted">mediaForceShowDeleted.</param>
         /// <param name="mediaDefaultDeleteBehaviour">mediaDefaultDeleteBehaviour.</param>
         /// <param name="mediaRecycleBin">Recycle bin is usually in the .recycle-bin folder in the volume root.</param>
         /// <param name="fileManagerRecycleBin">Recycle bins are usually either in Workspace/Share or Volume folder.</param>
@@ -343,9 +361,8 @@ namespace ElementsSDK.Model
         /// <param name="sslCertificate">sslCertificate.</param>
         /// <param name="sslCertificateKey">sslCertificateKey.</param>
         /// <param name="otpPolicy">otpPolicy.</param>
-        public Parameters(bool? mediaForceShowDeleted = default(bool?), bool analytics = default(bool), string identifyCommand = default(string), string externalUrl = default(string), string brandingCss = default(string), string brandingLogo = default(string), string fmNewDirectoryMode = default(string), string icapServer = default(string), int icapPort = default(int), string icapService = default(string), bool icapScanUploads = default(bool), bool ltfsDefaultRestoreToOriginalLocation = default(bool), bool ltfsDefaultSearchDirectories = default(bool), string ltfsLibraryAddress = default(string), bool mediaAutoPlay = default(bool), bool mediaAutoTransport = default(bool), bool mediaAutoScan = default(bool), bool mediaAutoProxy = default(bool), bool mediaAutoVeritoneUpload = default(bool), MediaProxyH264PresetEnum? mediaProxyH264Preset = default(MediaProxyH264PresetEnum?), MediaDefaultCustomFieldTypeEnum? mediaDefaultCustomFieldType = default(MediaDefaultCustomFieldTypeEnum?), MediaDefaultDeleteBehaviourEnum? mediaDefaultDeleteBehaviour = default(MediaDefaultDeleteBehaviourEnum?), bool mediaRecycleBin = default(bool), bool fileManagerRecycleBin = default(bool), bool ntpOfferSync = default(bool), bool slugifyWorkspacePath = default(bool), bool slugifyShares = default(bool), string smtpFrom = default(string), string smtpServer = default(string), int smtpPort = default(int), SmtpTlsEnum? smtpTls = default(SmtpTlsEnum?), string smtpUsername = default(string), string smtpEhlo = default(string), string mailStyling = default(string), int tasksLimit = default(int), int tasksHardLimit = default(int), string umaskAfp = default(string), string umaskSmb = default(string), string usersDefaultPermissions = default(string), string workspacesFolderTemplatePath = default(string), string workspacesMode = default(string), string workspacesPath = default(string), LanguageEnum? language = default(LanguageEnum?), string emailLogoUrl = default(string), bool mediaKeepSelectionWhenBrowsing = default(bool), bool tasksRunScheduled = default(bool), HttpsRedirectEnum? httpsRedirect = default(HttpsRedirectEnum?), string sslCertificate = default(string), string sslCertificateKey = default(string), OtpPolicyEnum? otpPolicy = default(OtpPolicyEnum?))
+        public Parameters(bool analytics = default(bool), string identifyCommand = default(string), string externalUrl = default(string), string brandingCss = default(string), string brandingLogo = default(string), string fmNewDirectoryMode = default(string), string icapServer = default(string), int icapPort = default(int), string icapService = default(string), bool icapScanUploads = default(bool), bool ltfsDefaultRestoreToOriginalLocation = default(bool), bool ltfsDefaultSearchDirectories = default(bool), string ltfsLibraryAddress = default(string), bool mediaAutoPlay = default(bool), bool mediaAutoTransport = default(bool), bool mediaAutoScan = default(bool), bool mediaAutoProxy = default(bool), bool mediaAutoVeritoneUpload = default(bool), MediaProxyH264PresetEnum? mediaProxyH264Preset = default(MediaProxyH264PresetEnum?), MediaDefaultCustomFieldTypeEnum? mediaDefaultCustomFieldType = default(MediaDefaultCustomFieldTypeEnum?), MediaForceShowDeletedEnum? mediaForceShowDeleted = default(MediaForceShowDeletedEnum?), MediaDefaultDeleteBehaviourEnum? mediaDefaultDeleteBehaviour = default(MediaDefaultDeleteBehaviourEnum?), bool mediaRecycleBin = default(bool), bool fileManagerRecycleBin = default(bool), bool ntpOfferSync = default(bool), bool slugifyWorkspacePath = default(bool), bool slugifyShares = default(bool), string smtpFrom = default(string), string smtpServer = default(string), int smtpPort = default(int), SmtpTlsEnum? smtpTls = default(SmtpTlsEnum?), string smtpUsername = default(string), string smtpEhlo = default(string), string mailStyling = default(string), int tasksLimit = default(int), int tasksHardLimit = default(int), string umaskAfp = default(string), string umaskSmb = default(string), string usersDefaultPermissions = default(string), string workspacesFolderTemplatePath = default(string), string workspacesMode = default(string), string workspacesPath = default(string), LanguageEnum? language = default(LanguageEnum?), string emailLogoUrl = default(string), bool mediaKeepSelectionWhenBrowsing = default(bool), bool tasksRunScheduled = default(bool), HttpsRedirectEnum? httpsRedirect = default(HttpsRedirectEnum?), string sslCertificate = default(string), string sslCertificateKey = default(string), OtpPolicyEnum? otpPolicy = default(OtpPolicyEnum?))
         {
-            this.MediaForceShowDeleted = mediaForceShowDeleted;
             this.Analytics = analytics;
             this.IdentifyCommand = identifyCommand;
             this.ExternalUrl = externalUrl;
@@ -366,6 +383,7 @@ namespace ElementsSDK.Model
             this.MediaAutoVeritoneUpload = mediaAutoVeritoneUpload;
             this.MediaProxyH264Preset = mediaProxyH264Preset;
             this.MediaDefaultCustomFieldType = mediaDefaultCustomFieldType;
+            this.MediaForceShowDeleted = mediaForceShowDeleted;
             this.MediaDefaultDeleteBehaviour = mediaDefaultDeleteBehaviour;
             this.MediaRecycleBin = mediaRecycleBin;
             this.FileManagerRecycleBin = fileManagerRecycleBin;
@@ -411,12 +429,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
-        /// <summary>
-        /// Gets or Sets MediaForceShowDeleted
-        /// </summary>
-        [DataMember(Name = "media_force_show_deleted", EmitDefaultValue = true)]
-        public bool? MediaForceShowDeleted { get; set; }
 
         /// <summary>
         /// Gets or Sets Analytics
@@ -685,7 +697,6 @@ namespace ElementsSDK.Model
             var sb = new StringBuilder();
             sb.Append("class Parameters {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  MediaForceShowDeleted: ").Append(MediaForceShowDeleted).Append("\n");
             sb.Append("  Analytics: ").Append(Analytics).Append("\n");
             sb.Append("  IdentifyCommand: ").Append(IdentifyCommand).Append("\n");
             sb.Append("  ExternalUrl: ").Append(ExternalUrl).Append("\n");
@@ -706,6 +717,7 @@ namespace ElementsSDK.Model
             sb.Append("  MediaAutoVeritoneUpload: ").Append(MediaAutoVeritoneUpload).Append("\n");
             sb.Append("  MediaProxyH264Preset: ").Append(MediaProxyH264Preset).Append("\n");
             sb.Append("  MediaDefaultCustomFieldType: ").Append(MediaDefaultCustomFieldType).Append("\n");
+            sb.Append("  MediaForceShowDeleted: ").Append(MediaForceShowDeleted).Append("\n");
             sb.Append("  MediaDefaultDeleteBehaviour: ").Append(MediaDefaultDeleteBehaviour).Append("\n");
             sb.Append("  MediaRecycleBin: ").Append(MediaRecycleBin).Append("\n");
             sb.Append("  FileManagerRecycleBin: ").Append(FileManagerRecycleBin).Append("\n");
@@ -772,11 +784,6 @@ namespace ElementsSDK.Model
                 (
                     this.Id == input.Id ||
                     this.Id.Equals(input.Id)
-                ) && 
-                (
-                    this.MediaForceShowDeleted == input.MediaForceShowDeleted ||
-                    (this.MediaForceShowDeleted != null &&
-                    this.MediaForceShowDeleted.Equals(input.MediaForceShowDeleted))
                 ) && 
                 (
                     this.Analytics == input.Analytics ||
@@ -865,6 +872,10 @@ namespace ElementsSDK.Model
                 (
                     this.MediaDefaultCustomFieldType == input.MediaDefaultCustomFieldType ||
                     this.MediaDefaultCustomFieldType.Equals(input.MediaDefaultCustomFieldType)
+                ) && 
+                (
+                    this.MediaForceShowDeleted == input.MediaForceShowDeleted ||
+                    this.MediaForceShowDeleted.Equals(input.MediaForceShowDeleted)
                 ) && 
                 (
                     this.MediaDefaultDeleteBehaviour == input.MediaDefaultDeleteBehaviour ||
@@ -1008,8 +1019,6 @@ namespace ElementsSDK.Model
             {
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.MediaForceShowDeleted != null)
-                    hashCode = hashCode * 59 + this.MediaForceShowDeleted.GetHashCode();
                 hashCode = hashCode * 59 + this.Analytics.GetHashCode();
                 if (this.IdentifyCommand != null)
                     hashCode = hashCode * 59 + this.IdentifyCommand.GetHashCode();
@@ -1038,6 +1047,7 @@ namespace ElementsSDK.Model
                 hashCode = hashCode * 59 + this.MediaAutoVeritoneUpload.GetHashCode();
                 hashCode = hashCode * 59 + this.MediaProxyH264Preset.GetHashCode();
                 hashCode = hashCode * 59 + this.MediaDefaultCustomFieldType.GetHashCode();
+                hashCode = hashCode * 59 + this.MediaForceShowDeleted.GetHashCode();
                 hashCode = hashCode * 59 + this.MediaDefaultDeleteBehaviour.GetHashCode();
                 hashCode = hashCode * 59 + this.MediaRecycleBin.GetHashCode();
                 hashCode = hashCode * 59 + this.FileManagerRecycleBin.GetHashCode();

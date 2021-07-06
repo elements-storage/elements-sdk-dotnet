@@ -31,40 +31,58 @@ namespace ElementsSDK.Model
     public partial class Job : IEquatable<Job>
     {
         /// <summary>
+        /// Defines SpecialType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum SpecialTypeEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_2 for value: 2
+            /// </summary>
+            NUMBER_2 = 2,
+
+            /// <summary>
+            /// Enum NUMBER_3 for value: 3
+            /// </summary>
+            NUMBER_3 = 3
+
+        }
+
+
+        /// <summary>
+        /// Gets or Sets SpecialType
+        /// </summary>
+        [DataMember(Name = "special_type", EmitDefaultValue = true)]
+        public SpecialTypeEnum? SpecialType { get; set; }
+        /// <summary>
         /// Defines InputType
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum InputTypeEnum
         {
             /// <summary>
-            /// Enum Null for value: null
-            /// </summary>
-            [EnumMember(Value = "null")]
-            Null = 1,
-
-            /// <summary>
             /// Enum Path for value: path
             /// </summary>
             [EnumMember(Value = "path")]
-            Path = 2,
+            Path = 1,
 
             /// <summary>
             /// Enum Dir for value: dir
             /// </summary>
             [EnumMember(Value = "dir")]
-            Dir = 3,
+            Dir = 2,
 
             /// <summary>
             /// Enum Paths for value: paths
             /// </summary>
             [EnumMember(Value = "paths")]
-            Paths = 4,
+            Paths = 3,
 
             /// <summary>
             /// Enum Dirs for value: dirs
             /// </summary>
             [EnumMember(Value = "dirs")]
-            Dirs = 5
+            Dirs = 4
 
         }
 
@@ -99,7 +117,7 @@ namespace ElementsSDK.Model
         /// <param name="webhookSecret">webhookSecret.</param>
         /// <param name="securityContext">securityContext.</param>
         /// <param name="partOfWorkflowFor">partOfWorkflowFor.</param>
-        public Job(List<SubtaskReference> subtasks = default(List<SubtaskReference>), List<ScheduleReference> schedules = default(List<ScheduleReference>), List<ElementsUserReference> allowUsers = default(List<ElementsUserReference>), List<ElementsGroupReference> allowGroups = default(List<ElementsGroupReference>), List<string> variableDefinitions = default(List<string>), List<int> mediaRoots = default(List<int>), int? specialType = default(int?), string name = default(string), bool enabled = default(bool), bool allowOthersToStart = default(bool), bool allowClientToStart = default(bool), bool showAsButton = default(bool), InputTypeEnum? inputType = default(InputTypeEnum?), string hook = default(string), string webhookSecret = default(string), int? securityContext = default(int?), int? partOfWorkflowFor = default(int?))
+        public Job(List<SubtaskReference> subtasks = default(List<SubtaskReference>), List<ScheduleReference> schedules = default(List<ScheduleReference>), List<ElementsUserReference> allowUsers = default(List<ElementsUserReference>), List<ElementsGroupReference> allowGroups = default(List<ElementsGroupReference>), List<string> variableDefinitions = default(List<string>), List<int> mediaRoots = default(List<int>), SpecialTypeEnum? specialType = default(SpecialTypeEnum?), string name = default(string), bool enabled = default(bool), bool allowOthersToStart = default(bool), bool allowClientToStart = default(bool), bool showAsButton = default(bool), InputTypeEnum? inputType = default(InputTypeEnum?), string hook = default(string), string webhookSecret = default(string), int? securityContext = default(int?), int? partOfWorkflowFor = default(int?))
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for Job and cannot be null");
@@ -201,12 +219,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
-        /// <summary>
-        /// Gets or Sets SpecialType
-        /// </summary>
-        [DataMember(Name = "special_type", EmitDefaultValue = true)]
-        public int? SpecialType { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -375,8 +387,7 @@ namespace ElementsSDK.Model
                 ) && 
                 (
                     this.SpecialType == input.SpecialType ||
-                    (this.SpecialType != null &&
-                    this.SpecialType.Equals(input.SpecialType))
+                    this.SpecialType.Equals(input.SpecialType)
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -450,8 +461,7 @@ namespace ElementsSDK.Model
                     hashCode = hashCode * 59 + this.MediaRoots.GetHashCode();
                 if (this.WebhookUrl != null)
                     hashCode = hashCode * 59 + this.WebhookUrl.GetHashCode();
-                if (this.SpecialType != null)
-                    hashCode = hashCode * 59 + this.SpecialType.GetHashCode();
+                hashCode = hashCode * 59 + this.SpecialType.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 hashCode = hashCode * 59 + this.Enabled.GetHashCode();

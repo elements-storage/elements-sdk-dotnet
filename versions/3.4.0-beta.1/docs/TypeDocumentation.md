@@ -1,0 +1,11 @@
+# ElementsSDK.Model.TypeDocumentation
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Name** | **string** |  | 
+**Url** | **string** |  | 
+
+[[Back to Model list]](../#documentation-for-models) [[Back to API list]](../#documentation-for-api-endpoints) [[Back to README]](../)
+

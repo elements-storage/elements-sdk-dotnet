@@ -31,40 +31,67 @@ namespace ElementsSDK.Model
     public partial class JobReference : IEquatable<JobReference>
     {
         /// <summary>
+        /// Defines SpecialType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum SpecialTypeEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_2 for value: 2
+            /// </summary>
+            NUMBER_2 = 2,
+
+            /// <summary>
+            /// Enum NUMBER_3 for value: 3
+            /// </summary>
+            NUMBER_3 = 3
+
+        }
+
+
+        /// <summary>
+        /// Gets or Sets SpecialType
+        /// </summary>
+        [DataMember(Name = "special_type", EmitDefaultValue = true)]
+        public SpecialTypeEnum? SpecialType { get; set; }
+
+        /// <summary>
+        /// Returns false as SpecialType should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeSpecialType()
+        {
+            return false;
+        }
+        /// <summary>
         /// Defines InputType
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum InputTypeEnum
         {
             /// <summary>
-            /// Enum Null for value: null
-            /// </summary>
-            [EnumMember(Value = "null")]
-            Null = 1,
-
-            /// <summary>
             /// Enum Path for value: path
             /// </summary>
             [EnumMember(Value = "path")]
-            Path = 2,
+            Path = 1,
 
             /// <summary>
             /// Enum Dir for value: dir
             /// </summary>
             [EnumMember(Value = "dir")]
-            Dir = 3,
+            Dir = 2,
 
             /// <summary>
             /// Enum Paths for value: paths
             /// </summary>
             [EnumMember(Value = "paths")]
-            Paths = 4,
+            Paths = 3,
 
             /// <summary>
             /// Enum Dirs for value: dirs
             /// </summary>
             [EnumMember(Value = "dirs")]
-            Dirs = 5
+            Dirs = 4
 
         }
 
@@ -214,21 +241,6 @@ namespace ElementsSDK.Model
         /// </summary>
         /// <returns>false (boolean)</returns>
         public bool ShouldSerializeWebhookUrl()
-        {
-            return false;
-        }
-
-        /// <summary>
-        /// Gets or Sets SpecialType
-        /// </summary>
-        [DataMember(Name = "special_type", EmitDefaultValue = true)]
-        public int? SpecialType { get; private set; }
-
-        /// <summary>
-        /// Returns false as SpecialType should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSpecialType()
         {
             return false;
         }
@@ -481,8 +493,7 @@ namespace ElementsSDK.Model
                 ) && 
                 (
                     this.SpecialType == input.SpecialType ||
-                    (this.SpecialType != null &&
-                    this.SpecialType.Equals(input.SpecialType))
+                    this.SpecialType.Equals(input.SpecialType)
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -556,8 +567,7 @@ namespace ElementsSDK.Model
                     hashCode = hashCode * 59 + this.MediaRoots.GetHashCode();
                 if (this.WebhookUrl != null)
                     hashCode = hashCode * 59 + this.WebhookUrl.GetHashCode();
-                if (this.SpecialType != null)
-                    hashCode = hashCode * 59 + this.SpecialType.GetHashCode();
+                hashCode = hashCode * 59 + this.SpecialType.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 hashCode = hashCode * 59 + this.Enabled.GetHashCode();
