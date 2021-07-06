@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int** |  | [optional] [readonly] 
+**MediaForceShowDeleted** | **bool?** |  | [optional] 
 **Analytics** | **bool** |  | [optional] 
 **IdentifyCommand** | **string** |  | [optional] 
 **ExternalUrl** | **string** | http://host/ | [optional] 
@@ -25,7 +26,6 @@ Name | Type | Description | Notes
 **MediaAutoVeritoneUpload** | **bool** |  | [optional] 
 **MediaProxyH264Preset** | **string** |  | [optional] 
 **MediaDefaultCustomFieldType** | **string** |  | [optional] 
-**MediaForceShowDeleted** | **bool?** |  | [optional] 
 **MediaDefaultDeleteBehaviour** | **string** |  | [optional] 
 **MediaRecycleBin** | **bool** | Recycle bin is usually in the .recycle-bin folder in the volume root | [optional] 
 **FileManagerRecycleBin** | **bool** | Recycle bins are usually either in Workspace/Share or Volume folder | [optional] 
