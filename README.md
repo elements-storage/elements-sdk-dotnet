@@ -20,7 +20,7 @@
 
 ## NuGet Repo
 
-- https://github.com/orgs/elements-storage/packages
+- [https://github.com/orgs/elements-storage/packages](https://github.com/orgs/elements-storage/packages)
 
 ## Usage
 
