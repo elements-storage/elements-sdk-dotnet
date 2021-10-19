@@ -135,7 +135,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Variables
         /// </summary>
@@ -156,7 +155,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Enabled
         /// </summary>

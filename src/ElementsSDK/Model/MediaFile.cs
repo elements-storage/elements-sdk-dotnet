@@ -69,7 +69,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Volume
         /// </summary>
@@ -108,7 +107,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Root
         /// </summary>
@@ -129,7 +127,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ModifiedBy
         /// </summary>
@@ -150,22 +147,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
-        /// <summary>
-        /// Gets or Sets SearchHighlight
-        /// </summary>
-        [DataMember(Name = "search_highlight", EmitDefaultValue = false)]
-        public string SearchHighlight { get; private set; }
-
-        /// <summary>
-        /// Returns false as SearchHighlight should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSearchHighlight()
-        {
-            return false;
-        }
-
         /// <summary>
         /// Gets or Sets IsShared
         /// </summary>
@@ -180,7 +161,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets IsExcluded
         /// </summary>
@@ -195,7 +175,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets IsHardlink
         /// </summary>
@@ -210,7 +189,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets IsBookmarked
         /// </summary>
@@ -225,7 +203,20 @@ namespace ElementsSDK.Model
         {
             return false;
         }
+        /// <summary>
+        /// Gets or Sets ChildCount
+        /// </summary>
+        [DataMember(Name = "child_count", EmitDefaultValue = false)]
+        public int ChildCount { get; private set; }
 
+        /// <summary>
+        /// Returns false as ChildCount should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeChildCount()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
@@ -240,7 +231,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Path
         /// </summary>
@@ -255,7 +245,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Pathhash
         /// </summary>
@@ -270,7 +259,20 @@ namespace ElementsSDK.Model
         {
             return false;
         }
+        /// <summary>
+        /// Gets or Sets Ancestry
+        /// </summary>
+        [DataMember(Name = "ancestry", EmitDefaultValue = false)]
+        public string Ancestry { get; private set; }
 
+        /// <summary>
+        /// Returns false as Ancestry should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeAncestry()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets IsDir
         /// </summary>
@@ -285,7 +287,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets TotalFiles
         /// </summary>
@@ -306,7 +307,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Mtime
         /// </summary>
@@ -321,7 +321,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Present
         /// </summary>
@@ -336,7 +335,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets NeedsRescan
         /// </summary>
@@ -357,7 +355,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets BundleIndex
         /// </summary>
@@ -372,7 +369,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Modified
         /// </summary>
@@ -387,7 +383,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Parent
         /// </summary>
@@ -402,7 +397,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Bundle
         /// </summary>
@@ -417,7 +411,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets BookmarkedBy
         /// </summary>
@@ -442,14 +435,15 @@ namespace ElementsSDK.Model
             sb.Append("  EffectiveCustomFields: ").Append(EffectiveCustomFields).Append("\n");
             sb.Append("  ModifiedBy: ").Append(ModifiedBy).Append("\n");
             sb.Append("  FullPath: ").Append(FullPath).Append("\n");
-            sb.Append("  SearchHighlight: ").Append(SearchHighlight).Append("\n");
             sb.Append("  IsShared: ").Append(IsShared).Append("\n");
             sb.Append("  IsExcluded: ").Append(IsExcluded).Append("\n");
             sb.Append("  IsHardlink: ").Append(IsHardlink).Append("\n");
             sb.Append("  IsBookmarked: ").Append(IsBookmarked).Append("\n");
+            sb.Append("  ChildCount: ").Append(ChildCount).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Path: ").Append(Path).Append("\n");
             sb.Append("  Pathhash: ").Append(Pathhash).Append("\n");
+            sb.Append("  Ancestry: ").Append(Ancestry).Append("\n");
             sb.Append("  IsDir: ").Append(IsDir).Append("\n");
             sb.Append("  TotalFiles: ").Append(TotalFiles).Append("\n");
             sb.Append("  Size: ").Append(Size).Append("\n");
@@ -550,11 +544,6 @@ namespace ElementsSDK.Model
                     this.FullPath.Equals(input.FullPath))
                 ) && 
                 (
-                    this.SearchHighlight == input.SearchHighlight ||
-                    (this.SearchHighlight != null &&
-                    this.SearchHighlight.Equals(input.SearchHighlight))
-                ) && 
-                (
                     this.IsShared == input.IsShared ||
                     this.IsShared.Equals(input.IsShared)
                 ) && 
@@ -571,6 +560,10 @@ namespace ElementsSDK.Model
                     this.IsBookmarked.Equals(input.IsBookmarked)
                 ) && 
                 (
+                    this.ChildCount == input.ChildCount ||
+                    this.ChildCount.Equals(input.ChildCount)
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -584,6 +577,11 @@ namespace ElementsSDK.Model
                     this.Pathhash == input.Pathhash ||
                     (this.Pathhash != null &&
                     this.Pathhash.Equals(input.Pathhash))
+                ) && 
+                (
+                    this.Ancestry == input.Ancestry ||
+                    (this.Ancestry != null &&
+                    this.Ancestry.Equals(input.Ancestry))
                 ) && 
                 (
                     this.IsDir == input.IsDir ||
@@ -667,18 +665,19 @@ namespace ElementsSDK.Model
                     hashCode = hashCode * 59 + this.ModifiedBy.GetHashCode();
                 if (this.FullPath != null)
                     hashCode = hashCode * 59 + this.FullPath.GetHashCode();
-                if (this.SearchHighlight != null)
-                    hashCode = hashCode * 59 + this.SearchHighlight.GetHashCode();
                 hashCode = hashCode * 59 + this.IsShared.GetHashCode();
                 hashCode = hashCode * 59 + this.IsExcluded.GetHashCode();
                 hashCode = hashCode * 59 + this.IsHardlink.GetHashCode();
                 hashCode = hashCode * 59 + this.IsBookmarked.GetHashCode();
+                hashCode = hashCode * 59 + this.ChildCount.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Path != null)
                     hashCode = hashCode * 59 + this.Path.GetHashCode();
                 if (this.Pathhash != null)
                     hashCode = hashCode * 59 + this.Pathhash.GetHashCode();
+                if (this.Ancestry != null)
+                    hashCode = hashCode * 59 + this.Ancestry.GetHashCode();
                 hashCode = hashCode * 59 + this.IsDir.GetHashCode();
                 if (this.TotalFiles != null)
                     hashCode = hashCode * 59 + this.TotalFiles.GetHashCode();

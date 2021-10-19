@@ -31,59 +31,6 @@ namespace ElementsSDK.Model
     public partial class SubtaskReference : IEquatable<SubtaskReference>
     {
         /// <summary>
-        /// Defines Trigger
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TriggerEnum
-        {
-            /// <summary>
-            /// Enum Finish for value: finish
-            /// </summary>
-            [EnumMember(Value = "finish")]
-            Finish = 1,
-
-            /// <summary>
-            /// Enum Success for value: success
-            /// </summary>
-            [EnumMember(Value = "success")]
-            Success = 2,
-
-            /// <summary>
-            /// Enum Warning for value: warning
-            /// </summary>
-            [EnumMember(Value = "warning")]
-            Warning = 3,
-
-            /// <summary>
-            /// Enum Error for value: error
-            /// </summary>
-            [EnumMember(Value = "error")]
-            Error = 4,
-
-            /// <summary>
-            /// Enum Noop for value: noop
-            /// </summary>
-            [EnumMember(Value = "noop")]
-            Noop = 5
-
-        }
-
-
-        /// <summary>
-        /// Gets or Sets Trigger
-        /// </summary>
-        [DataMember(Name = "trigger", EmitDefaultValue = true)]
-        public TriggerEnum? Trigger { get; set; }
-
-        /// <summary>
-        /// Returns false as Trigger should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeTrigger()
-        {
-            return false;
-        }
-        /// <summary>
         /// Initializes a new instance of the <see cref="SubtaskReference" /> class.
         /// </summary>
         /// <param name="id">id.</param>
@@ -112,7 +59,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets GraphLayout
         /// </summary>
@@ -127,7 +73,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ValidationError
         /// </summary>
@@ -142,7 +87,20 @@ namespace ElementsSDK.Model
         {
             return false;
         }
+        /// <summary>
+        /// Gets or Sets Trigger
+        /// </summary>
+        [DataMember(Name = "trigger", EmitDefaultValue = true)]
+        public string Trigger { get; private set; }
 
+        /// <summary>
+        /// Returns false as Trigger should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeTrigger()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
@@ -157,7 +115,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets NoopDontSave
         /// </summary>
@@ -172,7 +129,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets NoConcurrency
         /// </summary>
@@ -187,7 +143,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Timeout
         /// </summary>
@@ -202,7 +157,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets LogVariable
         /// </summary>
@@ -217,7 +171,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Task
         /// </summary>
@@ -232,7 +185,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ConditionVariable
         /// </summary>
@@ -247,7 +199,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ConditionValue
         /// </summary>
@@ -262,7 +213,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Sync
         /// </summary>
@@ -277,7 +227,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Queue
         /// </summary>
@@ -292,7 +241,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets EnqueueAtFront
         /// </summary>
@@ -307,7 +255,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Parent
         /// </summary>
@@ -322,7 +269,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets RelativeTo
         /// </summary>
@@ -337,7 +283,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -421,7 +366,8 @@ namespace ElementsSDK.Model
                 ) && 
                 (
                     this.Trigger == input.Trigger ||
-                    this.Trigger.Equals(input.Trigger)
+                    (this.Trigger != null &&
+                    this.Trigger.Equals(input.Trigger))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -500,7 +446,8 @@ namespace ElementsSDK.Model
                     hashCode = hashCode * 59 + this.GraphLayout.GetHashCode();
                 if (this.ValidationError != null)
                     hashCode = hashCode * 59 + this.ValidationError.GetHashCode();
-                hashCode = hashCode * 59 + this.Trigger.GetHashCode();
+                if (this.Trigger != null)
+                    hashCode = hashCode * 59 + this.Trigger.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 hashCode = hashCode * 59 + this.NoopDontSave.GetHashCode();

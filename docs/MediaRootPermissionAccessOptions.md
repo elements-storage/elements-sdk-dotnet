@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **ShowSubclips** | **bool** |  | [optional] 
 **ShowAiMetadata** | **bool** |  | [optional] 
 **ShowMarkers** | **bool** |  | [optional] 
+**ShowHistory** | **bool** |  | [optional] 
 **AllowCreate** | **bool** |  | [optional] 
 **AllowWriteFs** | **bool** |  | [optional] 
 **AllowWriteDb** | **bool** |  | [optional] 

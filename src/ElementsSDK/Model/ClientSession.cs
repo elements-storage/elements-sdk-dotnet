@@ -40,7 +40,7 @@ namespace ElementsSDK.Model
         /// </summary>
         /// <param name="user">user (required).</param>
         /// <param name="workstation">workstation (required).</param>
-        public ClientSession(ElementsUserMini user = default(ElementsUserMini), string workstation = default(string))
+        public ClientSession(ElementsUserMini user = default(ElementsUserMini), WorkstationMini workstation = default(WorkstationMini))
         {
             // to ensure "user" is required (not null)
             this.User = user ?? throw new ArgumentNullException("user is a required property for ClientSession and cannot be null");
@@ -62,7 +62,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets User
         /// </summary>
@@ -83,7 +82,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Started
         /// </summary>
@@ -98,7 +96,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets LastUpdated
         /// </summary>
@@ -113,12 +110,11 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Workstation
         /// </summary>
         [DataMember(Name = "workstation", IsRequired = true, EmitDefaultValue = false)]
-        public string Workstation { get; set; }
+        public WorkstationMini Workstation { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

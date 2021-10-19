@@ -53,7 +53,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets SyncId
         /// </summary>
@@ -68,27 +67,11 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets DefaultProxy
         /// </summary>
         [DataMember(Name = "default_proxy", EmitDefaultValue = false)]
         public Proxy DefaultProxy { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Urls
-        /// </summary>
-        [DataMember(Name = "urls", EmitDefaultValue = false)]
-        public Dictionary<string, string> Urls { get; private set; }
-
-        /// <summary>
-        /// Returns false as Urls should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeUrls()
-        {
-            return false;
-        }
 
         /// <summary>
         /// Gets or Sets Type
@@ -104,7 +87,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets DisplayName
         /// </summary>
@@ -119,12 +101,11 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Info
         /// </summary>
         [DataMember(Name = "info", EmitDefaultValue = false)]
-        public string Info { get; private set; }
+        public Dictionary<string, string> Info { get; private set; }
 
         /// <summary>
         /// Returns false as Info should not be serialized given that it's read-only.
@@ -134,7 +115,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ThumbnailGenerated
         /// </summary>
@@ -149,7 +129,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -161,7 +140,6 @@ namespace ElementsSDK.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  SyncId: ").Append(SyncId).Append("\n");
             sb.Append("  DefaultProxy: ").Append(DefaultProxy).Append("\n");
-            sb.Append("  Urls: ").Append(Urls).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  Info: ").Append(Info).Append("\n");
@@ -215,12 +193,6 @@ namespace ElementsSDK.Model
                     this.DefaultProxy.Equals(input.DefaultProxy))
                 ) && 
                 (
-                    this.Urls == input.Urls ||
-                    this.Urls != null &&
-                    input.Urls != null &&
-                    this.Urls.SequenceEqual(input.Urls)
-                ) && 
-                (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
@@ -232,8 +204,9 @@ namespace ElementsSDK.Model
                 ) && 
                 (
                     this.Info == input.Info ||
-                    (this.Info != null &&
-                    this.Info.Equals(input.Info))
+                    this.Info != null &&
+                    input.Info != null &&
+                    this.Info.SequenceEqual(input.Info)
                 ) && 
                 (
                     this.ThumbnailGenerated == input.ThumbnailGenerated ||
@@ -255,8 +228,6 @@ namespace ElementsSDK.Model
                     hashCode = hashCode * 59 + this.SyncId.GetHashCode();
                 if (this.DefaultProxy != null)
                     hashCode = hashCode * 59 + this.DefaultProxy.GetHashCode();
-                if (this.Urls != null)
-                    hashCode = hashCode * 59 + this.Urls.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.DisplayName != null)

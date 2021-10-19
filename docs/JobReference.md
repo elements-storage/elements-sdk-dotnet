@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **AllowUsers** | [**List&lt;ElementsUserReference&gt;**](ElementsUserReference.md) |  | [optional] [readonly] 
 **AllowGroups** | [**List&lt;ElementsGroupReference&gt;**](ElementsGroupReference.md) |  | [optional] [readonly] 
 **Startable** | **bool** |  | [optional] [readonly] 
-**VariableDefinitions** | **List&lt;string&gt;** |  | [optional] [readonly] 
+**VariableDefinitions** | **List&lt;Dictionary&lt;string, string&gt;&gt;** |  | [optional] [readonly] 
 **MediaRoots** | **List&lt;int&gt;** |  | [optional] [readonly] 
 **WebhookUrl** | **string** |  | [optional] [readonly] 
 **SpecialType** | **int?** |  | [optional] [readonly] 

@@ -69,21 +69,6 @@ namespace ElementsSDK.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets ClientSessions
-        /// </summary>
-        [DataMember(Name = "client_sessions", EmitDefaultValue = false)]
-        public List<ClientSession> ClientSessions { get; private set; }
-
-        /// <summary>
-        /// Returns false as ClientSessions should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeClientSessions()
-        {
-            return false;
-        }
-
-        /// <summary>
         /// Gets or Sets DisplayName
         /// </summary>
         [DataMember(Name = "display_name", EmitDefaultValue = false)]
@@ -97,7 +82,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets RdcAllowUsers
         /// </summary>
@@ -110,6 +94,20 @@ namespace ElementsSDK.Model
         [DataMember(Name = "rdc_allow_groups", EmitDefaultValue = false)]
         public List<ElementsGroupReference> RdcAllowGroups { get; set; }
 
+        /// <summary>
+        /// Gets or Sets ClientSessions
+        /// </summary>
+        [DataMember(Name = "client_sessions", EmitDefaultValue = false)]
+        public List<ClientSession> ClientSessions { get; private set; }
+
+        /// <summary>
+        /// Returns false as ClientSessions should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeClientSessions()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
@@ -155,10 +153,10 @@ namespace ElementsSDK.Model
             var sb = new StringBuilder();
             sb.Append("class Workstation {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  ClientSessions: ").Append(ClientSessions).Append("\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  RdcAllowUsers: ").Append(RdcAllowUsers).Append("\n");
             sb.Append("  RdcAllowGroups: ").Append(RdcAllowGroups).Append("\n");
+            sb.Append("  ClientSessions: ").Append(ClientSessions).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Hostname: ").Append(Hostname).Append("\n");
             sb.Append("  RdcLastUsed: ").Append(RdcLastUsed).Append("\n");
@@ -205,12 +203,6 @@ namespace ElementsSDK.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.ClientSessions == input.ClientSessions ||
-                    this.ClientSessions != null &&
-                    input.ClientSessions != null &&
-                    this.ClientSessions.SequenceEqual(input.ClientSessions)
-                ) && 
-                (
                     this.DisplayName == input.DisplayName ||
                     (this.DisplayName != null &&
                     this.DisplayName.Equals(input.DisplayName))
@@ -226,6 +218,12 @@ namespace ElementsSDK.Model
                     this.RdcAllowGroups != null &&
                     input.RdcAllowGroups != null &&
                     this.RdcAllowGroups.SequenceEqual(input.RdcAllowGroups)
+                ) && 
+                (
+                    this.ClientSessions == input.ClientSessions ||
+                    this.ClientSessions != null &&
+                    input.ClientSessions != null &&
+                    this.ClientSessions.SequenceEqual(input.ClientSessions)
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -269,14 +267,14 @@ namespace ElementsSDK.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ClientSessions != null)
-                    hashCode = hashCode * 59 + this.ClientSessions.GetHashCode();
                 if (this.DisplayName != null)
                     hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
                 if (this.RdcAllowUsers != null)
                     hashCode = hashCode * 59 + this.RdcAllowUsers.GetHashCode();
                 if (this.RdcAllowGroups != null)
                     hashCode = hashCode * 59 + this.RdcAllowGroups.GetHashCode();
+                if (this.ClientSessions != null)
+                    hashCode = hashCode * 59 + this.ClientSessions.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Hostname != null)

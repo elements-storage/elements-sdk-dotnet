@@ -142,7 +142,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Path
         /// </summary>
@@ -157,7 +156,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Nodes
         /// </summary>
@@ -172,7 +170,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets DisplayName
         /// </summary>
@@ -187,7 +184,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets VisualTag
         /// </summary>
@@ -202,7 +198,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets IsDefault
         /// </summary>
@@ -217,7 +212,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets UseForHomes
         /// </summary>
@@ -232,7 +226,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets UseForWorkspaces
         /// </summary>
@@ -247,7 +240,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets SnmEnabled
         /// </summary>
@@ -262,7 +254,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets SnfsName
         /// </summary>
@@ -277,7 +268,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets SimulatedQuotas
         /// </summary>
@@ -292,7 +282,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets FsProperties
         /// </summary>

@@ -54,7 +54,7 @@ namespace ElementsSDK.Model
             this.Host = host ?? throw new ArgumentNullException("host is a required property for LizardFSNode and cannot be null");
             this.Online = online;
             // to ensure "version" is required (not null)
-            this.Version = version ?? throw new ArgumentNullException("version is a required property for LizardFSNode and cannot be null");
+            this._Version = version ?? throw new ArgumentNullException("version is a required property for LizardFSNode and cannot be null");
             this.Chunks = chunks;
             this.SizeTotal = sizeTotal;
             this.SizeUsed = sizeUsed;
@@ -84,10 +84,10 @@ namespace ElementsSDK.Model
         public bool Online { get; set; }
 
         /// <summary>
-        /// Gets or Sets Version
+        /// Gets or Sets _Version
         /// </summary>
         [DataMember(Name = "version", IsRequired = true, EmitDefaultValue = false)]
-        public string Version { get; set; }
+        public string _Version { get; set; }
 
         /// <summary>
         /// Gets or Sets Chunks
@@ -136,7 +136,7 @@ namespace ElementsSDK.Model
             sb.Append("  Node: ").Append(Node).Append("\n");
             sb.Append("  Host: ").Append(Host).Append("\n");
             sb.Append("  Online: ").Append(Online).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
+            sb.Append("  _Version: ").Append(_Version).Append("\n");
             sb.Append("  Chunks: ").Append(Chunks).Append("\n");
             sb.Append("  SizeTotal: ").Append(SizeTotal).Append("\n");
             sb.Append("  SizeUsed: ").Append(SizeUsed).Append("\n");
@@ -192,9 +192,9 @@ namespace ElementsSDK.Model
                     this.Online.Equals(input.Online)
                 ) && 
                 (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
+                    this._Version == input._Version ||
+                    (this._Version != null &&
+                    this._Version.Equals(input._Version))
                 ) && 
                 (
                     this.Chunks == input.Chunks ||
@@ -237,8 +237,8 @@ namespace ElementsSDK.Model
                 if (this.Host != null)
                     hashCode = hashCode * 59 + this.Host.GetHashCode();
                 hashCode = hashCode * 59 + this.Online.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this._Version != null)
+                    hashCode = hashCode * 59 + this._Version.GetHashCode();
                 hashCode = hashCode * 59 + this.Chunks.GetHashCode();
                 hashCode = hashCode * 59 + this.SizeTotal.GetHashCode();
                 hashCode = hashCode * 59 + this.SizeUsed.GetHashCode();

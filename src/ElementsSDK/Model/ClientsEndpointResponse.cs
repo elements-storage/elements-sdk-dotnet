@@ -45,7 +45,7 @@ namespace ElementsSDK.Model
         public ClientsEndpointResponse(string version = default(string), string fullVersion = default(string), string platform = default(string), string file = default(string))
         {
             // to ensure "version" is required (not null)
-            this.Version = version ?? throw new ArgumentNullException("version is a required property for ClientsEndpointResponse and cannot be null");
+            this._Version = version ?? throw new ArgumentNullException("version is a required property for ClientsEndpointResponse and cannot be null");
             // to ensure "fullVersion" is required (not null)
             this.FullVersion = fullVersion ?? throw new ArgumentNullException("fullVersion is a required property for ClientsEndpointResponse and cannot be null");
             // to ensure "platform" is required (not null)
@@ -55,10 +55,10 @@ namespace ElementsSDK.Model
         }
 
         /// <summary>
-        /// Gets or Sets Version
+        /// Gets or Sets _Version
         /// </summary>
         [DataMember(Name = "version", IsRequired = true, EmitDefaultValue = false)]
-        public string Version { get; set; }
+        public string _Version { get; set; }
 
         /// <summary>
         /// Gets or Sets FullVersion
@@ -86,7 +86,7 @@ namespace ElementsSDK.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ClientsEndpointResponse {\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
+            sb.Append("  _Version: ").Append(_Version).Append("\n");
             sb.Append("  FullVersion: ").Append(FullVersion).Append("\n");
             sb.Append("  Platform: ").Append(Platform).Append("\n");
             sb.Append("  File: ").Append(File).Append("\n");
@@ -125,9 +125,9 @@ namespace ElementsSDK.Model
 
             return 
                 (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
+                    this._Version == input._Version ||
+                    (this._Version != null &&
+                    this._Version.Equals(input._Version))
                 ) && 
                 (
                     this.FullVersion == input.FullVersion ||
@@ -155,8 +155,8 @@ namespace ElementsSDK.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this._Version != null)
+                    hashCode = hashCode * 59 + this._Version.GetHashCode();
                 if (this.FullVersion != null)
                     hashCode = hashCode * 59 + this.FullVersion.GetHashCode();
                 if (this.Platform != null)

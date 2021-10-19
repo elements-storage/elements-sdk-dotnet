@@ -36,7 +36,7 @@ namespace ElementsSDK.Model
         /// <param name="customFields">customFields.</param>
         /// <param name="tags">tags.</param>
         /// <param name="set">set.</param>
-        public AssetPartialUpdate(Dictionary<string, string> customFields = default(Dictionary<string, string>), List<TagReference> tags = default(List<TagReference>), int? set = default(int?))
+        public AssetPartialUpdate(Dictionary<string, string> customFields = default(Dictionary<string, string>), List<int> tags = default(List<int>), int? set = default(int?))
         {
             this.CustomFields = customFields;
             this.Tags = tags;
@@ -53,7 +53,7 @@ namespace ElementsSDK.Model
         /// Gets or Sets Tags
         /// </summary>
         [DataMember(Name = "tags", EmitDefaultValue = false)]
-        public List<TagReference> Tags { get; set; }
+        public List<int> Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets Set

@@ -41,6 +41,7 @@ namespace ElementsSDK.Model
         /// <param name="showSubclips">showSubclips.</param>
         /// <param name="showAiMetadata">showAiMetadata.</param>
         /// <param name="showMarkers">showMarkers.</param>
+        /// <param name="showHistory">showHistory.</param>
         /// <param name="allowCreate">allowCreate.</param>
         /// <param name="allowWriteFs">allowWriteFs.</param>
         /// <param name="allowWriteDb">allowWriteDb.</param>
@@ -50,7 +51,7 @@ namespace ElementsSDK.Model
         /// <param name="allowSharing">allowSharing.</param>
         /// <param name="allowDeleteFs">allowDeleteFs.</param>
         /// <param name="allowDeleteDb">allowDeleteDb.</param>
-        public MediaRootPermissionAccessOptions(bool showTags = default(bool), bool showComments = default(bool), bool showLocations = default(bool), bool showCustomFields = default(bool), bool showRatings = default(bool), bool showSubclips = default(bool), bool showAiMetadata = default(bool), bool showMarkers = default(bool), bool allowCreate = default(bool), bool allowWriteFs = default(bool), bool allowWriteDb = default(bool), bool allowProxyDownload = default(bool), bool allowOriginalDownload = default(bool), bool allowUpload = default(bool), bool allowSharing = default(bool), bool allowDeleteFs = default(bool), bool allowDeleteDb = default(bool))
+        public MediaRootPermissionAccessOptions(bool showTags = default(bool), bool showComments = default(bool), bool showLocations = default(bool), bool showCustomFields = default(bool), bool showRatings = default(bool), bool showSubclips = default(bool), bool showAiMetadata = default(bool), bool showMarkers = default(bool), bool showHistory = default(bool), bool allowCreate = default(bool), bool allowWriteFs = default(bool), bool allowWriteDb = default(bool), bool allowProxyDownload = default(bool), bool allowOriginalDownload = default(bool), bool allowUpload = default(bool), bool allowSharing = default(bool), bool allowDeleteFs = default(bool), bool allowDeleteDb = default(bool))
         {
             this.ShowTags = showTags;
             this.ShowComments = showComments;
@@ -60,6 +61,7 @@ namespace ElementsSDK.Model
             this.ShowSubclips = showSubclips;
             this.ShowAiMetadata = showAiMetadata;
             this.ShowMarkers = showMarkers;
+            this.ShowHistory = showHistory;
             this.AllowCreate = allowCreate;
             this.AllowWriteFs = allowWriteFs;
             this.AllowWriteDb = allowWriteDb;
@@ -118,6 +120,12 @@ namespace ElementsSDK.Model
         /// </summary>
         [DataMember(Name = "show_markers", EmitDefaultValue = true)]
         public bool ShowMarkers { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ShowHistory
+        /// </summary>
+        [DataMember(Name = "show_history", EmitDefaultValue = true)]
+        public bool ShowHistory { get; set; }
 
         /// <summary>
         /// Gets or Sets AllowCreate
@@ -189,6 +197,7 @@ namespace ElementsSDK.Model
             sb.Append("  ShowSubclips: ").Append(ShowSubclips).Append("\n");
             sb.Append("  ShowAiMetadata: ").Append(ShowAiMetadata).Append("\n");
             sb.Append("  ShowMarkers: ").Append(ShowMarkers).Append("\n");
+            sb.Append("  ShowHistory: ").Append(ShowHistory).Append("\n");
             sb.Append("  AllowCreate: ").Append(AllowCreate).Append("\n");
             sb.Append("  AllowWriteFs: ").Append(AllowWriteFs).Append("\n");
             sb.Append("  AllowWriteDb: ").Append(AllowWriteDb).Append("\n");
@@ -265,6 +274,10 @@ namespace ElementsSDK.Model
                     this.ShowMarkers.Equals(input.ShowMarkers)
                 ) && 
                 (
+                    this.ShowHistory == input.ShowHistory ||
+                    this.ShowHistory.Equals(input.ShowHistory)
+                ) && 
+                (
                     this.AllowCreate == input.AllowCreate ||
                     this.AllowCreate.Equals(input.AllowCreate)
                 ) && 
@@ -319,6 +332,7 @@ namespace ElementsSDK.Model
                 hashCode = hashCode * 59 + this.ShowSubclips.GetHashCode();
                 hashCode = hashCode * 59 + this.ShowAiMetadata.GetHashCode();
                 hashCode = hashCode * 59 + this.ShowMarkers.GetHashCode();
+                hashCode = hashCode * 59 + this.ShowHistory.GetHashCode();
                 hashCode = hashCode * 59 + this.AllowCreate.GetHashCode();
                 hashCode = hashCode * 59 + this.AllowWriteFs.GetHashCode();
                 hashCode = hashCode * 59 + this.AllowWriteDb.GetHashCode();

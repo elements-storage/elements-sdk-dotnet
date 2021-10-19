@@ -59,7 +59,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets MembersPreview
         /// </summary>
@@ -74,7 +73,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets EffectivePermissions
         /// </summary>
@@ -89,7 +87,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
@@ -104,7 +101,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets LdapDn
         /// </summary>
@@ -119,7 +115,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets UnixGroupname
         /// </summary>
@@ -134,7 +129,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Gid
         /// </summary>
@@ -149,7 +143,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets AncillaryPath
         /// </summary>
@@ -164,7 +157,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets AncillaryPathReadOnly
         /// </summary>
@@ -179,7 +171,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Ldap
         /// </summary>
@@ -194,7 +185,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Members
         /// </summary>
@@ -209,7 +199,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

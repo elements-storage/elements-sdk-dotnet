@@ -75,7 +75,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Activity
         /// </summary>
@@ -90,7 +89,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets User
         /// </summary>
@@ -117,7 +115,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets SharedBundles
         /// </summary>
@@ -132,7 +129,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets SharedDirectories
         /// </summary>
@@ -147,7 +143,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets FullUrl
         /// </summary>
@@ -162,7 +157,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
@@ -189,7 +183,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ViewLimitEnabled
         /// </summary>
@@ -228,7 +221,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets IsEasySharingForDirectory
         /// </summary>
@@ -243,7 +235,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

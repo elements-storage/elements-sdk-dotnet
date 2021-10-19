@@ -43,16 +43,16 @@ namespace ElementsSDK.Model
         public ReleaseNotesEndpointResponse(string version = default(string), string html = default(string))
         {
             // to ensure "version" is required (not null)
-            this.Version = version ?? throw new ArgumentNullException("version is a required property for ReleaseNotesEndpointResponse and cannot be null");
+            this._Version = version ?? throw new ArgumentNullException("version is a required property for ReleaseNotesEndpointResponse and cannot be null");
             // to ensure "html" is required (not null)
             this.Html = html ?? throw new ArgumentNullException("html is a required property for ReleaseNotesEndpointResponse and cannot be null");
         }
 
         /// <summary>
-        /// Gets or Sets Version
+        /// Gets or Sets _Version
         /// </summary>
         [DataMember(Name = "version", IsRequired = true, EmitDefaultValue = false)]
-        public string Version { get; set; }
+        public string _Version { get; set; }
 
         /// <summary>
         /// Gets or Sets Html
@@ -68,7 +68,7 @@ namespace ElementsSDK.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ReleaseNotesEndpointResponse {\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
+            sb.Append("  _Version: ").Append(_Version).Append("\n");
             sb.Append("  Html: ").Append(Html).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -105,9 +105,9 @@ namespace ElementsSDK.Model
 
             return 
                 (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
+                    this._Version == input._Version ||
+                    (this._Version != null &&
+                    this._Version.Equals(input._Version))
                 ) && 
                 (
                     this.Html == input.Html ||
@@ -125,8 +125,8 @@ namespace ElementsSDK.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this._Version != null)
+                    hashCode = hashCode * 59 + this._Version.GetHashCode();
                 if (this.Html != null)
                     hashCode = hashCode * 59 + this.Html.GetHashCode();
                 return hashCode;

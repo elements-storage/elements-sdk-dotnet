@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int** |  | [optional] [readonly] 
-**Production** | [**ProductionReference**](ProductionReference.md) |  | 
-**Volume** | [**VolumeReference**](VolumeReference.md) |  | [optional] 
+**Production** | [**ProductionMiniReference**](ProductionMiniReference.md) |  | 
+**Volume** | [**VolumeMiniReference**](VolumeMiniReference.md) |  | [optional] 
 **VolumePath** | **string** |  | [optional] [readonly] 
 **Path** | **string** |  | [optional] [readonly] 
 **SharingNfsPermissions** | **List&lt;string&gt;** |  | [optional] 
@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **Bookmarked** | **bool** |  | [optional] [readonly] 
 **ResolvedPermissions** | [**List&lt;WorkspaceResolvedPermission&gt;**](WorkspaceResolvedPermission.md) |  | [optional] [readonly] 
 **ResolvedReadOnly** | **bool** |  | [optional] [readonly] 
-**RecycleBinPath** | **string** |  | [optional] [readonly] 
 **Name** | **string** |  | [optional] 
 **Directory** | **string** |  | [optional] [readonly] 
 **Description** | **string** |  | [optional] 
@@ -39,8 +38,9 @@ Name | Type | Description | Notes
 **SharingRequireLogin** | **bool** |  | [optional] 
 **SharingReadOnly** | **bool** |  | [optional] 
 **SharingAllowExecute** | **bool** |  | [optional] 
-**QuotaSizeHard** | **int?** |  | [optional] 
-**QuotaSizeSoft** | **int?** |  | [optional] 
+**EnableQuota** | **bool** |  | [optional] 
+**QuotaSizeHard** | **int** |  | [optional] 
+**QuotaSizeSoft** | **int** |  | [optional] 
 **Affinity** | **string** |  | [optional] 
 **EmulateAvid** | **bool** |  | [optional] 
 **EmulateCapture** | **bool** |  | [optional] 

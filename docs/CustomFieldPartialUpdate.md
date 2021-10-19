@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Labels** | **List&lt;string&gt;** |  | [optional] 
 **Options** | **List&lt;string&gt;** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Order** | **int** |  | [optional] 

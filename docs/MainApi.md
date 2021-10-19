@@ -27,6 +27,7 @@ Method | HTTP request | Description
 [**EnableUserTOTP**](MainApi.md#enableusertotp) | **POST** /api/2/users/{id}/totp | 
 [**FinishUpload**](MainApi.md#finishupload) | **POST** /api/2/uploads/finish | 
 [**FixLDAPGroupMemberships**](MainApi.md#fixldapgroupmemberships) | **POST** /api/2/ldap-servers/{id}/fix-memberships | 
+[**GetAllClientSessions**](MainApi.md#getallclientsessions) | **GET** /api/2/client-sessions | 
 [**GetAllDownloadArchives**](MainApi.md#getalldownloadarchives) | **GET** /api/2/download-archive | 
 [**GetAllDownloads**](MainApi.md#getalldownloads) | **GET** /api/2/downloads | 
 [**GetAllGroups**](MainApi.md#getallgroups) | **GET** /api/2/groups | 
@@ -38,6 +39,7 @@ Method | HTTP request | Description
 [**GetCertificateConfiguration**](MainApi.md#getcertificateconfiguration) | **GET** /api/2/system/certificate | 
 [**GetClientDownloadFile**](MainApi.md#getclientdownloadfile) | **GET** /api/2/downloads/clients/{file} | 
 [**GetClientDownloads**](MainApi.md#getclientdownloads) | **GET** /api/2/downloads/clients | 
+[**GetClientSession**](MainApi.md#getclientsession) | **GET** /api/2/client-sessions/{id} | 
 [**GetCurrentWorkstation**](MainApi.md#getcurrentworkstation) | **GET** /api/2/workstations/current | 
 [**GetDownload**](MainApi.md#getdownload) | **GET** /api/2/downloads/{id} | 
 [**GetDownloadArchive**](MainApi.md#getdownloadarchive) | **GET** /api/2/download-archive/{id} | 
@@ -1804,6 +1806,91 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getallclientsessions"></a>
+# **GetAllClientSessions**
+> List&lt;ClientSession&gt; GetAllClientSessions (string user = null, string mountedWorkspacesMountNode = null, string workstation = null, string ordering = null, int? limit = null, int? offset = null)
+
+
+
+### Required permissions    * User account permission: `system:status:view` 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using ElementsSDK.Api;
+using ElementsSDK.Client;
+using ElementsSDK.Model;
+
+namespace Example
+{
+    public class GetAllClientSessionsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://elements.local";
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new MainApi(config);
+            var user = user_example;  // string | Filter the returned list by `user`. (optional) 
+            var mountedWorkspacesMountNode = mountedWorkspacesMountNode_example;  // string | Filter the returned list by `mounted_workspaces__mount_node`. (optional) 
+            var workstation = workstation_example;  // string | Filter the returned list by `workstation`. (optional) 
+            var ordering = ordering_example;  // string | Which field to use when ordering the results. (optional) 
+            var limit = 56;  // int? | Number of results to return per page. (optional) 
+            var offset = 56;  // int? | The initial index from which to return the results. (optional) 
+
+            try
+            {
+                List<ClientSession> result = apiInstance.GetAllClientSessions(user, mountedWorkspacesMountNode, workstation, ordering, limit, offset);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling MainApi.GetAllClientSessions: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user** | **string**| Filter the returned list by &#x60;user&#x60;. | [optional] 
+ **mountedWorkspacesMountNode** | **string**| Filter the returned list by &#x60;mounted_workspaces__mount_node&#x60;. | [optional] 
+ **workstation** | **string**| Filter the returned list by &#x60;workstation&#x60;. | [optional] 
+ **ordering** | **string**| Which field to use when ordering the results. | [optional] 
+ **limit** | **int?**| Number of results to return per page. | [optional] 
+ **offset** | **int?**| The initial index from which to return the results. | [optional] 
+
+### Return type
+
+[**List&lt;ClientSession&gt;**](ClientSession.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="getalldownloadarchives"></a>
 # **GetAllDownloadArchives**
 > List&lt;DownloadArchive&gt; GetAllDownloadArchives (string ordering = null, int? limit = null, int? offset = null)
@@ -2296,7 +2383,7 @@ Name | Type | Description  | Notes
 
 <a name="getallusers"></a>
 # **GetAllUsers**
-> List&lt;ElementsUser&gt; GetAllUsers (string username = null, string home = null, string fullName = null, string ordering = null, int? limit = null, int? offset = null, bool? includeAllowedFsPaths = null, bool? includeClientSessions = null)
+> List&lt;ElementsUser&gt; GetAllUsers (string username = null, string home = null, string fullName = null, string ordering = null, int? limit = null, int? offset = null, bool? includeAllowedFsPaths = null)
 
 
 
@@ -2331,11 +2418,10 @@ namespace Example
             var limit = 56;  // int? | Number of results to return per page. (optional) 
             var offset = 56;  // int? | The initial index from which to return the results. (optional) 
             var includeAllowedFsPaths = true;  // bool? |  (optional) 
-            var includeClientSessions = true;  // bool? |  (optional) 
 
             try
             {
-                List<ElementsUser> result = apiInstance.GetAllUsers(username, home, fullName, ordering, limit, offset, includeAllowedFsPaths, includeClientSessions);
+                List<ElementsUser> result = apiInstance.GetAllUsers(username, home, fullName, ordering, limit, offset, includeAllowedFsPaths);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2360,7 +2446,6 @@ Name | Type | Description  | Notes
  **limit** | **int?**| Number of results to return per page. | [optional] 
  **offset** | **int?**| The initial index from which to return the results. | [optional] 
  **includeAllowedFsPaths** | **bool?**|  | [optional] 
- **includeClientSessions** | **bool?**|  | [optional] 
 
 ### Return type
 
@@ -2664,6 +2749,81 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**List&lt;ClientsEndpointResponse&gt;**](ClientsEndpointResponse.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getclientsession"></a>
+# **GetClientSession**
+> ClientSession GetClientSession (int id)
+
+
+
+### Required permissions    * User account permission: `system:status:view` 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using ElementsSDK.Api;
+using ElementsSDK.Client;
+using ElementsSDK.Model;
+
+namespace Example
+{
+    public class GetClientSessionExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://elements.local";
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new MainApi(config);
+            var id = 56;  // int | A unique integer value identifying this client session.
+
+            try
+            {
+                ClientSession result = apiInstance.GetClientSession(id);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling MainApi.GetClientSession: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this client session. | 
+
+### Return type
+
+[**ClientSession**](ClientSession.md)
 
 ### Authorization
 

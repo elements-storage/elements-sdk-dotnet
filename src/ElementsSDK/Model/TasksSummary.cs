@@ -39,11 +39,14 @@ namespace ElementsSDK.Model
         /// Initializes a new instance of the <see cref="TasksSummary" /> class.
         /// </summary>
         /// <param name="running">running (required).</param>
+        /// <param name="recentFinished">recentFinished (required).</param>
         /// <param name="pendingCount">pendingCount (required).</param>
-        public TasksSummary(List<TaskInfo> running = default(List<TaskInfo>), int pendingCount = default(int))
+        public TasksSummary(List<TaskInfo> running = default(List<TaskInfo>), List<TaskInfo> recentFinished = default(List<TaskInfo>), int pendingCount = default(int))
         {
             // to ensure "running" is required (not null)
             this.Running = running ?? throw new ArgumentNullException("running is a required property for TasksSummary and cannot be null");
+            // to ensure "recentFinished" is required (not null)
+            this.RecentFinished = recentFinished ?? throw new ArgumentNullException("recentFinished is a required property for TasksSummary and cannot be null");
             this.PendingCount = pendingCount;
         }
 
@@ -52,6 +55,12 @@ namespace ElementsSDK.Model
         /// </summary>
         [DataMember(Name = "running", IsRequired = true, EmitDefaultValue = false)]
         public List<TaskInfo> Running { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RecentFinished
+        /// </summary>
+        [DataMember(Name = "recent_finished", IsRequired = true, EmitDefaultValue = false)]
+        public List<TaskInfo> RecentFinished { get; set; }
 
         /// <summary>
         /// Gets or Sets PendingCount
@@ -68,6 +77,7 @@ namespace ElementsSDK.Model
             var sb = new StringBuilder();
             sb.Append("class TasksSummary {\n");
             sb.Append("  Running: ").Append(Running).Append("\n");
+            sb.Append("  RecentFinished: ").Append(RecentFinished).Append("\n");
             sb.Append("  PendingCount: ").Append(PendingCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -110,6 +120,12 @@ namespace ElementsSDK.Model
                     this.Running.SequenceEqual(input.Running)
                 ) && 
                 (
+                    this.RecentFinished == input.RecentFinished ||
+                    this.RecentFinished != null &&
+                    input.RecentFinished != null &&
+                    this.RecentFinished.SequenceEqual(input.RecentFinished)
+                ) && 
+                (
                     this.PendingCount == input.PendingCount ||
                     this.PendingCount.Equals(input.PendingCount)
                 );
@@ -126,6 +142,8 @@ namespace ElementsSDK.Model
                 int hashCode = 41;
                 if (this.Running != null)
                     hashCode = hashCode * 59 + this.Running.GetHashCode();
+                if (this.RecentFinished != null)
+                    hashCode = hashCode * 59 + this.RecentFinished.GetHashCode();
                 hashCode = hashCode * 59 + this.PendingCount.GetHashCode();
                 return hashCode;
             }

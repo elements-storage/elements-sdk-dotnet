@@ -31,50 +31,6 @@ namespace ElementsSDK.Model
     public partial class SubtaskPartialUpdate : IEquatable<SubtaskPartialUpdate>
     {
         /// <summary>
-        /// Defines Trigger
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TriggerEnum
-        {
-            /// <summary>
-            /// Enum Finish for value: finish
-            /// </summary>
-            [EnumMember(Value = "finish")]
-            Finish = 1,
-
-            /// <summary>
-            /// Enum Success for value: success
-            /// </summary>
-            [EnumMember(Value = "success")]
-            Success = 2,
-
-            /// <summary>
-            /// Enum Warning for value: warning
-            /// </summary>
-            [EnumMember(Value = "warning")]
-            Warning = 3,
-
-            /// <summary>
-            /// Enum Error for value: error
-            /// </summary>
-            [EnumMember(Value = "error")]
-            Error = 4,
-
-            /// <summary>
-            /// Enum Noop for value: noop
-            /// </summary>
-            [EnumMember(Value = "noop")]
-            Noop = 5
-
-        }
-
-
-        /// <summary>
-        /// Gets or Sets Trigger
-        /// </summary>
-        [DataMember(Name = "trigger", EmitDefaultValue = true)]
-        public TriggerEnum? Trigger { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="SubtaskPartialUpdate" /> class.
         /// </summary>
         /// <param name="kwargs">kwargs.</param>
@@ -93,7 +49,7 @@ namespace ElementsSDK.Model
         /// <param name="enqueueAtFront">enqueueAtFront.</param>
         /// <param name="parent">parent.</param>
         /// <param name="relativeTo">relativeTo.</param>
-        public SubtaskPartialUpdate(Dictionary<string, string> kwargs = default(Dictionary<string, string>), Dictionary<string, string> graphLayout = default(Dictionary<string, string>), TriggerEnum? trigger = default(TriggerEnum?), string name = default(string), bool noopDontSave = default(bool), bool noConcurrency = default(bool), int? timeout = default(int?), bool logVariable = default(bool), string task = default(string), string conditionVariable = default(string), string conditionValue = default(string), bool sync = default(bool), string queue = default(string), bool enqueueAtFront = default(bool), int parent = default(int), int? relativeTo = default(int?))
+        public SubtaskPartialUpdate(Dictionary<string, string> kwargs = default(Dictionary<string, string>), Dictionary<string, string> graphLayout = default(Dictionary<string, string>), string trigger = default(string), string name = default(string), bool noopDontSave = default(bool), bool noConcurrency = default(bool), int? timeout = default(int?), bool logVariable = default(bool), string task = default(string), string conditionVariable = default(string), string conditionValue = default(string), bool sync = default(bool), string queue = default(string), bool enqueueAtFront = default(bool), int parent = default(int), int? relativeTo = default(int?))
         {
             this.Kwargs = kwargs;
             this.GraphLayout = graphLayout;
@@ -124,6 +80,12 @@ namespace ElementsSDK.Model
         /// </summary>
         [DataMember(Name = "graph_layout", EmitDefaultValue = false)]
         public Dictionary<string, string> GraphLayout { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Trigger
+        /// </summary>
+        [DataMember(Name = "trigger", EmitDefaultValue = true)]
+        public string Trigger { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -275,7 +237,8 @@ namespace ElementsSDK.Model
                 ) && 
                 (
                     this.Trigger == input.Trigger ||
-                    this.Trigger.Equals(input.Trigger)
+                    (this.Trigger != null &&
+                    this.Trigger.Equals(input.Trigger))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -351,7 +314,8 @@ namespace ElementsSDK.Model
                     hashCode = hashCode * 59 + this.Kwargs.GetHashCode();
                 if (this.GraphLayout != null)
                     hashCode = hashCode * 59 + this.GraphLayout.GetHashCode();
-                hashCode = hashCode * 59 + this.Trigger.GetHashCode();
+                if (this.Trigger != null)
+                    hashCode = hashCode * 59 + this.Trigger.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 hashCode = hashCode * 59 + this.NoopDontSave.GetHashCode();

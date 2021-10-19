@@ -44,7 +44,7 @@ namespace ElementsSDK.Model
         /// <param name="resolvedPermission">resolvedPermission.</param>
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="set">set.</param>
-        public Asset(Proxy defaultProxy = default(Proxy), Dictionary<string, string> customFields = default(Dictionary<string, string>), List<TagReference> tags = default(List<TagReference>), MediaRootPermission resolvedPermission = default(MediaRootPermission), ElementsUserMini modifiedBy = default(ElementsUserMini), int? set = default(int?))
+        public Asset(Proxy defaultProxy = default(Proxy), Dictionary<string, string> customFields = default(Dictionary<string, string>), List<int> tags = default(List<int>), MediaRootPermission resolvedPermission = default(MediaRootPermission), ElementsUserMini modifiedBy = default(ElementsUserMini), int? set = default(int?))
         {
             // to ensure "customFields" is required (not null)
             this.CustomFields = customFields ?? throw new ArgumentNullException("customFields is a required property for Asset and cannot be null");
@@ -70,22 +70,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
-        /// <summary>
-        /// Gets or Sets Urls
-        /// </summary>
-        [DataMember(Name = "urls", EmitDefaultValue = false)]
-        public Dictionary<string, string> Urls { get; private set; }
-
-        /// <summary>
-        /// Returns false as Urls should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeUrls()
-        {
-            return false;
-        }
-
         /// <summary>
         /// Gets or Sets Proxies
         /// </summary>
@@ -100,7 +84,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets DefaultProxy
         /// </summary>
@@ -121,7 +104,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ProxyInfo
         /// </summary>
@@ -136,7 +118,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets CustomFields
         /// </summary>
@@ -147,28 +128,13 @@ namespace ElementsSDK.Model
         /// Gets or Sets Tags
         /// </summary>
         [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = false)]
-        public List<TagReference> Tags { get; set; }
+        public List<int> Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets ResolvedPermission
         /// </summary>
         [DataMember(Name = "resolved_permission", EmitDefaultValue = false)]
         public MediaRootPermission ResolvedPermission { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Bundles
-        /// </summary>
-        [DataMember(Name = "bundles", EmitDefaultValue = false)]
-        public List<Dictionary<string, string>> Bundles { get; private set; }
-
-        /// <summary>
-        /// Returns false as Bundles should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeBundles()
-        {
-            return false;
-        }
 
         /// <summary>
         /// Gets or Sets Backups
@@ -184,7 +150,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ProxiesGenerated
         /// </summary>
@@ -199,7 +164,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ProxiesFailed
         /// </summary>
@@ -214,13 +178,26 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ModifiedBy
         /// </summary>
         [DataMember(Name = "modified_by", EmitDefaultValue = false)]
         public ElementsUserMini ModifiedBy { get; set; }
 
+        /// <summary>
+        /// Gets or Sets Bundles
+        /// </summary>
+        [DataMember(Name = "bundles", EmitDefaultValue = false)]
+        public List<MediaFileBundleMini> Bundles { get; private set; }
+
+        /// <summary>
+        /// Returns false as Bundles should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeBundles()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets SyncId
         /// </summary>
@@ -235,7 +212,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets DisplayName
         /// </summary>
@@ -250,7 +226,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets HasFiles
         /// </summary>
@@ -265,7 +240,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets HasBackups
         /// </summary>
@@ -280,7 +254,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets HasCloudLinks
         /// </summary>
@@ -295,7 +268,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Checksum
         /// </summary>
@@ -310,7 +282,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
@@ -325,7 +296,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ThumbnailGenerated
         /// </summary>
@@ -340,7 +310,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets MatchedScanner
         /// </summary>
@@ -355,7 +324,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Rating
         /// </summary>
@@ -370,7 +338,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets WorkflowState
         /// </summary>
@@ -385,7 +352,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets IsTemporary
         /// </summary>
@@ -400,7 +366,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Created
         /// </summary>
@@ -415,7 +380,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Modified
         /// </summary>
@@ -430,7 +394,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Set
         /// </summary>
@@ -446,7 +409,6 @@ namespace ElementsSDK.Model
             var sb = new StringBuilder();
             sb.Append("class Asset {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Urls: ").Append(Urls).Append("\n");
             sb.Append("  Proxies: ").Append(Proxies).Append("\n");
             sb.Append("  DefaultProxy: ").Append(DefaultProxy).Append("\n");
             sb.Append("  Info: ").Append(Info).Append("\n");
@@ -454,11 +416,11 @@ namespace ElementsSDK.Model
             sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  ResolvedPermission: ").Append(ResolvedPermission).Append("\n");
-            sb.Append("  Bundles: ").Append(Bundles).Append("\n");
             sb.Append("  Backups: ").Append(Backups).Append("\n");
             sb.Append("  ProxiesGenerated: ").Append(ProxiesGenerated).Append("\n");
             sb.Append("  ProxiesFailed: ").Append(ProxiesFailed).Append("\n");
             sb.Append("  ModifiedBy: ").Append(ModifiedBy).Append("\n");
+            sb.Append("  Bundles: ").Append(Bundles).Append("\n");
             sb.Append("  SyncId: ").Append(SyncId).Append("\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  HasFiles: ").Append(HasFiles).Append("\n");
@@ -513,12 +475,6 @@ namespace ElementsSDK.Model
                     this.Id.Equals(input.Id)
                 ) && 
                 (
-                    this.Urls == input.Urls ||
-                    this.Urls != null &&
-                    input.Urls != null &&
-                    this.Urls.SequenceEqual(input.Urls)
-                ) && 
-                (
                     this.Proxies == input.Proxies ||
                     this.Proxies != null &&
                     input.Proxies != null &&
@@ -559,12 +515,6 @@ namespace ElementsSDK.Model
                     this.ResolvedPermission.Equals(input.ResolvedPermission))
                 ) && 
                 (
-                    this.Bundles == input.Bundles ||
-                    this.Bundles != null &&
-                    input.Bundles != null &&
-                    this.Bundles.SequenceEqual(input.Bundles)
-                ) && 
-                (
                     this.Backups == input.Backups ||
                     (this.Backups != null &&
                     this.Backups.Equals(input.Backups))
@@ -581,6 +531,12 @@ namespace ElementsSDK.Model
                     this.ModifiedBy == input.ModifiedBy ||
                     (this.ModifiedBy != null &&
                     this.ModifiedBy.Equals(input.ModifiedBy))
+                ) && 
+                (
+                    this.Bundles == input.Bundles ||
+                    this.Bundles != null &&
+                    input.Bundles != null &&
+                    this.Bundles.SequenceEqual(input.Bundles)
                 ) && 
                 (
                     this.SyncId == input.SyncId ||
@@ -662,8 +618,6 @@ namespace ElementsSDK.Model
             {
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Urls != null)
-                    hashCode = hashCode * 59 + this.Urls.GetHashCode();
                 if (this.Proxies != null)
                     hashCode = hashCode * 59 + this.Proxies.GetHashCode();
                 if (this.DefaultProxy != null)
@@ -678,14 +632,14 @@ namespace ElementsSDK.Model
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.ResolvedPermission != null)
                     hashCode = hashCode * 59 + this.ResolvedPermission.GetHashCode();
-                if (this.Bundles != null)
-                    hashCode = hashCode * 59 + this.Bundles.GetHashCode();
                 if (this.Backups != null)
                     hashCode = hashCode * 59 + this.Backups.GetHashCode();
                 hashCode = hashCode * 59 + this.ProxiesGenerated.GetHashCode();
                 hashCode = hashCode * 59 + this.ProxiesFailed.GetHashCode();
                 if (this.ModifiedBy != null)
                     hashCode = hashCode * 59 + this.ModifiedBy.GetHashCode();
+                if (this.Bundles != null)
+                    hashCode = hashCode * 59 + this.Bundles.GetHashCode();
                 if (this.SyncId != null)
                     hashCode = hashCode * 59 + this.SyncId.GetHashCode();
                 if (this.DisplayName != null)

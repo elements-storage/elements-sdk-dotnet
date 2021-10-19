@@ -319,6 +319,7 @@ namespace ElementsSDK.Model
         /// <param name="sharingRequireLogin">sharingRequireLogin.</param>
         /// <param name="sharingReadOnly">sharingReadOnly.</param>
         /// <param name="sharingAllowExecute">sharingAllowExecute.</param>
+        /// <param name="enableQuota">enableQuota.</param>
         /// <param name="quotaSizeHard">quotaSizeHard.</param>
         /// <param name="quotaSizeSoft">quotaSizeSoft.</param>
         /// <param name="affinity">affinity.</param>
@@ -338,7 +339,7 @@ namespace ElementsSDK.Model
         /// <param name="allowSymlinks">allowSymlinks.</param>
         /// <param name="rwPermissionPriority">rwPermissionPriority.</param>
         /// <param name="template">template.</param>
-        public Workspace(ProductionReference production = default(ProductionReference), VolumeReference volume = default(VolumeReference), List<string> sharingNfsPermissions = default(List<string>), Quota quota = default(Quota), string name = default(string), string description = default(string), string longDescription = default(string), bool isTemplate = default(bool), bool active = default(bool), MacProtocolEnum? macProtocol = default(MacProtocolEnum?), WinProtocolEnum? winProtocol = default(WinProtocolEnum?), WinDriveEnum? winDrive = default(WinDriveEnum?), LinuxProtocolEnum? linuxProtocol = default(LinuxProtocolEnum?), string linuxMountpoint = default(string), string shareName = default(string), bool shareNfs = default(bool), bool shareAfp = default(bool), bool sharingHidden = default(bool), bool sharingRequireLogin = default(bool), bool sharingReadOnly = default(bool), bool sharingAllowExecute = default(bool), int? quotaSizeHard = default(int?), int? quotaSizeSoft = default(int?), string affinity = default(string), bool emulateAvid = default(bool), bool emulateCapture = default(bool), bool emulatePreopen = default(bool), bool emulateNtfsStreams = default(bool), bool emulateRecycleBin = default(bool), bool emulateFruit = default(bool), string smbExtraConfig = default(string), string afpExtraConfig = default(string), string recycleBinExclude = default(string), bool isExternal = default(bool), string externalMacUrl = default(string), string externalWinUrl = default(string), string externalLinuxUrl = default(string), bool allowSymlinks = default(bool), bool rwPermissionPriority = default(bool), int? template = default(int?))
+        public Workspace(ProductionMiniReference production = default(ProductionMiniReference), VolumeMiniReference volume = default(VolumeMiniReference), List<string> sharingNfsPermissions = default(List<string>), Quota quota = default(Quota), string name = default(string), string description = default(string), string longDescription = default(string), bool isTemplate = default(bool), bool active = default(bool), MacProtocolEnum? macProtocol = default(MacProtocolEnum?), WinProtocolEnum? winProtocol = default(WinProtocolEnum?), WinDriveEnum? winDrive = default(WinDriveEnum?), LinuxProtocolEnum? linuxProtocol = default(LinuxProtocolEnum?), string linuxMountpoint = default(string), string shareName = default(string), bool shareNfs = default(bool), bool shareAfp = default(bool), bool sharingHidden = default(bool), bool sharingRequireLogin = default(bool), bool sharingReadOnly = default(bool), bool sharingAllowExecute = default(bool), bool enableQuota = default(bool), int quotaSizeHard = default(int), int quotaSizeSoft = default(int), string affinity = default(string), bool emulateAvid = default(bool), bool emulateCapture = default(bool), bool emulatePreopen = default(bool), bool emulateNtfsStreams = default(bool), bool emulateRecycleBin = default(bool), bool emulateFruit = default(bool), string smbExtraConfig = default(string), string afpExtraConfig = default(string), string recycleBinExclude = default(string), bool isExternal = default(bool), string externalMacUrl = default(string), string externalWinUrl = default(string), string externalLinuxUrl = default(string), bool allowSymlinks = default(bool), bool rwPermissionPriority = default(bool), int? template = default(int?))
         {
             // to ensure "production" is required (not null)
             this.Production = production ?? throw new ArgumentNullException("production is a required property for Workspace and cannot be null");
@@ -362,6 +363,7 @@ namespace ElementsSDK.Model
             this.SharingRequireLogin = sharingRequireLogin;
             this.SharingReadOnly = sharingReadOnly;
             this.SharingAllowExecute = sharingAllowExecute;
+            this.EnableQuota = enableQuota;
             this.QuotaSizeHard = quotaSizeHard;
             this.QuotaSizeSoft = quotaSizeSoft;
             this.Affinity = affinity;
@@ -397,18 +399,17 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Production
         /// </summary>
         [DataMember(Name = "production", IsRequired = true, EmitDefaultValue = false)]
-        public ProductionReference Production { get; set; }
+        public ProductionMiniReference Production { get; set; }
 
         /// <summary>
         /// Gets or Sets Volume
         /// </summary>
         [DataMember(Name = "volume", EmitDefaultValue = false)]
-        public VolumeReference Volume { get; set; }
+        public VolumeMiniReference Volume { get; set; }
 
         /// <summary>
         /// Gets or Sets VolumePath
@@ -424,7 +425,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Path
         /// </summary>
@@ -439,7 +439,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets SharingNfsPermissions
         /// </summary>
@@ -460,7 +459,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets CurrentShareName
         /// </summary>
@@ -475,7 +473,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Endpoints
         /// </summary>
@@ -490,11 +487,10 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Quota
         /// </summary>
-        [DataMember(Name = "quota", EmitDefaultValue = true)]
+        [DataMember(Name = "quota", EmitDefaultValue = false)]
         public Quota Quota { get; set; }
 
         /// <summary>
@@ -511,7 +507,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets SizeTotal
         /// </summary>
@@ -526,7 +521,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Bookmarked
         /// </summary>
@@ -541,7 +535,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ResolvedPermissions
         /// </summary>
@@ -556,7 +549,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ResolvedReadOnly
         /// </summary>
@@ -571,22 +563,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
-        /// <summary>
-        /// Gets or Sets RecycleBinPath
-        /// </summary>
-        [DataMember(Name = "recycle_bin_path", EmitDefaultValue = false)]
-        public string RecycleBinPath { get; private set; }
-
-        /// <summary>
-        /// Returns false as RecycleBinPath should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeRecycleBinPath()
-        {
-            return false;
-        }
-
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
@@ -607,7 +583,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
@@ -640,7 +615,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Active
         /// </summary>
@@ -696,16 +670,22 @@ namespace ElementsSDK.Model
         public bool SharingAllowExecute { get; set; }
 
         /// <summary>
+        /// Gets or Sets EnableQuota
+        /// </summary>
+        [DataMember(Name = "enable_quota", EmitDefaultValue = true)]
+        public bool EnableQuota { get; set; }
+
+        /// <summary>
         /// Gets or Sets QuotaSizeHard
         /// </summary>
-        [DataMember(Name = "quota_size_hard", EmitDefaultValue = true)]
-        public int? QuotaSizeHard { get; set; }
+        [DataMember(Name = "quota_size_hard", EmitDefaultValue = false)]
+        public int QuotaSizeHard { get; set; }
 
         /// <summary>
         /// Gets or Sets QuotaSizeSoft
         /// </summary>
-        [DataMember(Name = "quota_size_soft", EmitDefaultValue = true)]
-        public int? QuotaSizeSoft { get; set; }
+        [DataMember(Name = "quota_size_soft", EmitDefaultValue = false)]
+        public int QuotaSizeSoft { get; set; }
 
         /// <summary>
         /// Gets or Sets Affinity
@@ -823,7 +803,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -847,7 +826,6 @@ namespace ElementsSDK.Model
             sb.Append("  Bookmarked: ").Append(Bookmarked).Append("\n");
             sb.Append("  ResolvedPermissions: ").Append(ResolvedPermissions).Append("\n");
             sb.Append("  ResolvedReadOnly: ").Append(ResolvedReadOnly).Append("\n");
-            sb.Append("  RecycleBinPath: ").Append(RecycleBinPath).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Directory: ").Append(Directory).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
@@ -867,6 +845,7 @@ namespace ElementsSDK.Model
             sb.Append("  SharingRequireLogin: ").Append(SharingRequireLogin).Append("\n");
             sb.Append("  SharingReadOnly: ").Append(SharingReadOnly).Append("\n");
             sb.Append("  SharingAllowExecute: ").Append(SharingAllowExecute).Append("\n");
+            sb.Append("  EnableQuota: ").Append(EnableQuota).Append("\n");
             sb.Append("  QuotaSizeHard: ").Append(QuotaSizeHard).Append("\n");
             sb.Append("  QuotaSizeSoft: ").Append(QuotaSizeSoft).Append("\n");
             sb.Append("  Affinity: ").Append(Affinity).Append("\n");
@@ -995,11 +974,6 @@ namespace ElementsSDK.Model
                     this.ResolvedReadOnly.Equals(input.ResolvedReadOnly)
                 ) && 
                 (
-                    this.RecycleBinPath == input.RecycleBinPath ||
-                    (this.RecycleBinPath != null &&
-                    this.RecycleBinPath.Equals(input.RecycleBinPath))
-                ) && 
-                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -1083,14 +1057,16 @@ namespace ElementsSDK.Model
                     this.SharingAllowExecute.Equals(input.SharingAllowExecute)
                 ) && 
                 (
+                    this.EnableQuota == input.EnableQuota ||
+                    this.EnableQuota.Equals(input.EnableQuota)
+                ) && 
+                (
                     this.QuotaSizeHard == input.QuotaSizeHard ||
-                    (this.QuotaSizeHard != null &&
-                    this.QuotaSizeHard.Equals(input.QuotaSizeHard))
+                    this.QuotaSizeHard.Equals(input.QuotaSizeHard)
                 ) && 
                 (
                     this.QuotaSizeSoft == input.QuotaSizeSoft ||
-                    (this.QuotaSizeSoft != null &&
-                    this.QuotaSizeSoft.Equals(input.QuotaSizeSoft))
+                    this.QuotaSizeSoft.Equals(input.QuotaSizeSoft)
                 ) && 
                 (
                     this.Affinity == input.Affinity ||
@@ -1208,8 +1184,6 @@ namespace ElementsSDK.Model
                 if (this.ResolvedPermissions != null)
                     hashCode = hashCode * 59 + this.ResolvedPermissions.GetHashCode();
                 hashCode = hashCode * 59 + this.ResolvedReadOnly.GetHashCode();
-                if (this.RecycleBinPath != null)
-                    hashCode = hashCode * 59 + this.RecycleBinPath.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Directory != null)
@@ -1236,10 +1210,9 @@ namespace ElementsSDK.Model
                 hashCode = hashCode * 59 + this.SharingRequireLogin.GetHashCode();
                 hashCode = hashCode * 59 + this.SharingReadOnly.GetHashCode();
                 hashCode = hashCode * 59 + this.SharingAllowExecute.GetHashCode();
-                if (this.QuotaSizeHard != null)
-                    hashCode = hashCode * 59 + this.QuotaSizeHard.GetHashCode();
-                if (this.QuotaSizeSoft != null)
-                    hashCode = hashCode * 59 + this.QuotaSizeSoft.GetHashCode();
+                hashCode = hashCode * 59 + this.EnableQuota.GetHashCode();
+                hashCode = hashCode * 59 + this.QuotaSizeHard.GetHashCode();
+                hashCode = hashCode * 59 + this.QuotaSizeSoft.GetHashCode();
                 if (this.Affinity != null)
                     hashCode = hashCode * 59 + this.Affinity.GetHashCode();
                 hashCode = hashCode * 59 + this.EmulateAvid.GetHashCode();

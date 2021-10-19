@@ -64,14 +64,11 @@ namespace ElementsSDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalTranscoder" /> class.
         /// </summary>
-        /// <param name="pathMappings">pathMappings (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="type">type.</param>
         /// <param name="address">address (required).</param>
-        public ExternalTranscoder(List<string> pathMappings = default(List<string>), string name = default(string), TypeEnum? type = default(TypeEnum?), string address = default(string))
+        public ExternalTranscoder(string name = default(string), TypeEnum? type = default(TypeEnum?), string address = default(string))
         {
-            // to ensure "pathMappings" is required (not null)
-            this.PathMappings = pathMappings ?? throw new ArgumentNullException("pathMappings is a required property for ExternalTranscoder and cannot be null");
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for ExternalTranscoder and cannot be null");
             // to ensure "address" is required (not null)
@@ -93,13 +90,20 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets PathMappings
         /// </summary>
-        [DataMember(Name = "path_mappings", IsRequired = true, EmitDefaultValue = false)]
-        public List<string> PathMappings { get; set; }
+        [DataMember(Name = "path_mappings", EmitDefaultValue = false)]
+        public List<string> PathMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as PathMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializePathMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Name
         /// </summary>

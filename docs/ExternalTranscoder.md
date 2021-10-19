@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int** |  | [optional] [readonly] 
-**PathMappings** | **List&lt;string&gt;** |  | 
+**PathMappings** | **List&lt;string&gt;** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Type** | **string** |  | [optional] 
 **Address** | **string** |  | 

@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **Bitrate** | **int?** |  | [optional] 
 **AudioBitrate** | **int** |  | [optional] 
 **VariantsLimit** | **int** |  | [optional] 
-**EnableRealtimeRead** | **bool** |  | [optional] 
 **EnableDenseFilmstrip** | **bool** |  | [optional] 
 **EnableWatermark** | **bool** |  | [optional] 
 **WatermarkImage** | **string** |  | [optional] 

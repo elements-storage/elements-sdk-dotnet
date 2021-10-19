@@ -5,19 +5,18 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int** |  | [optional] [readonly] 
-**Urls** | **Dictionary&lt;string, string&gt;** |  | [optional] [readonly] 
 **Proxies** | [**List&lt;Proxy&gt;**](Proxy.md) |  | [optional] [readonly] 
 **DefaultProxy** | [**Proxy**](Proxy.md) |  | [optional] 
 **Info** | **Dictionary&lt;string, string&gt;** |  | [optional] [readonly] 
 **ProxyInfo** | **Dictionary&lt;string, string&gt;** |  | [optional] [readonly] 
 **CustomFields** | **Dictionary&lt;string, string&gt;** |  | 
-**Tags** | [**List&lt;TagReference&gt;**](TagReference.md) |  | 
+**Tags** | **List&lt;int&gt;** |  | 
 **ResolvedPermission** | [**MediaRootPermission**](MediaRootPermission.md) |  | [optional] 
-**Bundles** | **List&lt;Dictionary&lt;string, string&gt;&gt;** |  | [optional] [readonly] 
 **Backups** | **string** |  | [optional] [readonly] 
 **ProxiesGenerated** | **bool** |  | [optional] [readonly] 
 **ProxiesFailed** | **bool** |  | [optional] [readonly] 
 **ModifiedBy** | [**ElementsUserMini**](ElementsUserMini.md) |  | [optional] 
+**Bundles** | [**List&lt;MediaFileBundleMini&gt;**](MediaFileBundleMini.md) |  | [optional] [readonly] 
 **SyncId** | **Guid** |  | [optional] [readonly] 
 **DisplayName** | **string** |  | [optional] [readonly] 
 **HasFiles** | **bool** |  | [optional] [readonly] 

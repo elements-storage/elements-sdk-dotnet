@@ -31,7 +31,7 @@ namespace ElementsSDK.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "3.4.0-beta.1";
+        public const string Version = "3.4.0";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -67,7 +67,7 @@ namespace ElementsSDK.Client
         /// Defines the base path of the target API server.
         /// Example: http://localhost:3000/v1/
         /// </summary>
-        private String _basePath;
+        private string _basePath;
 
         /// <summary>
         /// Gets or sets the API key based on the authentication name.
@@ -101,7 +101,7 @@ namespace ElementsSDK.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = "OpenAPI-Generator/3.4.0-beta.1/csharp";
+            UserAgent = "OpenAPI-Generator/3.4.0/csharp";
             BasePath = "https://elements.local";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -440,13 +440,13 @@ namespace ElementsSDK.Client
         /// <summary>
         /// Returns a string with essential information for debugging.
         /// </summary>
-        public static String ToDebugReport()
+        public static string ToDebugReport()
         {
-            String report = "C# SDK (ElementsSDK) Debug Report:\n";
+            string report = "C# SDK (ElementsSDK) Debug Report:\n";
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 2\n";
-            report += "    SDK Package Version: 3.4.0-beta.1\n";
+            report += "    SDK Package Version: 3.4.0\n";
 
             return report;
         }

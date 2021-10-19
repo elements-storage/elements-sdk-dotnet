@@ -59,23 +59,15 @@ namespace ElementsSDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalTranscoderPartialUpdate" /> class.
         /// </summary>
-        /// <param name="pathMappings">pathMappings.</param>
         /// <param name="name">name.</param>
         /// <param name="type">type.</param>
         /// <param name="address">address.</param>
-        public ExternalTranscoderPartialUpdate(List<string> pathMappings = default(List<string>), string name = default(string), TypeEnum? type = default(TypeEnum?), string address = default(string))
+        public ExternalTranscoderPartialUpdate(string name = default(string), TypeEnum? type = default(TypeEnum?), string address = default(string))
         {
-            this.PathMappings = pathMappings;
             this.Name = name;
             this.Type = type;
             this.Address = address;
         }
-
-        /// <summary>
-        /// Gets or Sets PathMappings
-        /// </summary>
-        [DataMember(Name = "path_mappings", EmitDefaultValue = false)]
-        public List<string> PathMappings { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -97,7 +89,6 @@ namespace ElementsSDK.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ExternalTranscoderPartialUpdate {\n");
-            sb.Append("  PathMappings: ").Append(PathMappings).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
@@ -136,12 +127,6 @@ namespace ElementsSDK.Model
 
             return 
                 (
-                    this.PathMappings == input.PathMappings ||
-                    this.PathMappings != null &&
-                    input.PathMappings != null &&
-                    this.PathMappings.SequenceEqual(input.PathMappings)
-                ) && 
-                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -166,8 +151,6 @@ namespace ElementsSDK.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PathMappings != null)
-                    hashCode = hashCode * 59 + this.PathMappings.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 hashCode = hashCode * 59 + this.Type.GetHashCode();

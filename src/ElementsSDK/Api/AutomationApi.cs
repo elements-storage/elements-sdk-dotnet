@@ -281,6 +281,27 @@ namespace ElementsSDK.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </remarks>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A unique integer value identifying this job.</param>
+        /// <returns></returns>
+        void ExportJob(int id);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </remarks>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A unique integer value identifying this job.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ExportJobWithHttpInfo(int id);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// ### Required permissions    * &lt;class &#39;rest_framework.permissions.AllowAny&#39;&gt; 
         /// </remarks>
         /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
@@ -777,6 +798,27 @@ namespace ElementsSDK.Api
         /// <param name="offset">The initial index from which to return the results. (optional)</param>
         /// <returns>ApiResponse of TasksSummary</returns>
         ApiResponse<TasksSummary> GetTasksSummaryWithHttpInfo(string jobInstance = default(string), string jobInstanceIn = default(string), string subtask = default(string), string state = default(string), decimal? stateIn = default(decimal?), string id = default(string), string idIn = default(string), string name = default(string), string taskName = default(string), string ordering = default(string), int? limit = default(int?), int? offset = default(int?));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </remarks>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importJobRequest"></param>
+        /// <returns>ImportJobResponse</returns>
+        ImportJobResponse ImportJob(ImportJobRequest importJobRequest);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </remarks>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importJobRequest"></param>
+        /// <returns>ApiResponse of ImportJobResponse</returns>
+        ApiResponse<ImportJobResponse> ImportJobWithHttpInfo(ImportJobRequest importJobRequest);
         /// <summary>
         /// 
         /// </summary>
@@ -1299,6 +1341,29 @@ namespace ElementsSDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DownloadTaskLogWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </remarks>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A unique integer value identifying this job.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ExportJobAsync(int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </remarks>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A unique integer value identifying this job.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ExportJobWithHttpInfoAsync(int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1842,6 +1907,29 @@ namespace ElementsSDK.Api
         /// ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
         /// </remarks>
         /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importJobRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ImportJobResponse</returns>
+        System.Threading.Tasks.Task<ImportJobResponse> ImportJobAsync(ImportJobRequest importJobRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </remarks>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importJobRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ImportJobResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ImportJobResponse>> ImportJobWithHttpInfoAsync(ImportJobRequest importJobRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </remarks>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task KillAllPendingTasksAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2130,7 +2218,7 @@ namespace ElementsSDK.Api
         /// Initializes a new instance of the <see cref="AutomationApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public AutomationApi(String basePath)
+        public AutomationApi(string basePath)
         {
             this.Configuration = ElementsSDK.Client.Configuration.MergeConfigurations(
                 ElementsSDK.Client.GlobalConfiguration.Instance,
@@ -2193,7 +2281,7 @@ namespace ElementsSDK.Api
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public String GetBasePath()
+        public string GetBasePath()
         {
             return this.Configuration.BasePath;
         }
@@ -2245,11 +2333,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = ElementsSDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2261,7 +2349,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -2306,11 +2394,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -2323,7 +2411,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -2367,12 +2455,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2385,7 +2473,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = job;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -2431,12 +2519,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2450,7 +2538,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = job;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -2494,12 +2582,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2512,7 +2600,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = schedule;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -2558,12 +2646,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2577,7 +2665,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = schedule;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -2621,12 +2709,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2639,7 +2727,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = subtask;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -2685,12 +2773,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2704,7 +2792,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = subtask;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -2741,11 +2829,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = ElementsSDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2756,7 +2844,7 @@ namespace ElementsSDK.Api
 
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -2795,11 +2883,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -2811,7 +2899,7 @@ namespace ElementsSDK.Api
 
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -2850,11 +2938,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = ElementsSDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2866,7 +2954,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -2907,11 +2995,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -2924,7 +3012,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -2963,11 +3051,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = ElementsSDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2979,7 +3067,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -3020,11 +3108,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -3037,7 +3125,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -3076,11 +3164,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = ElementsSDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -3092,7 +3180,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -3133,11 +3221,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -3150,7 +3238,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -3193,11 +3281,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = ElementsSDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -3209,7 +3297,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -3254,11 +3342,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -3271,7 +3359,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -3332,11 +3420,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = ElementsSDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -3395,7 +3483,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -3458,11 +3546,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -3522,7 +3610,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -3565,11 +3653,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = ElementsSDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -3581,7 +3669,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -3626,11 +3714,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -3643,7 +3731,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -3655,6 +3743,119 @@ namespace ElementsSDK.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DownloadTaskLog", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </summary>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A unique integer value identifying this job.</param>
+        /// <returns></returns>
+        public void ExportJob(int id)
+        {
+            ExportJobWithHttpInfo(id);
+        }
+
+        /// <summary>
+        ///  ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </summary>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A unique integer value identifying this job.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ElementsSDK.Client.ApiResponse<Object> ExportJobWithHttpInfo(int id)
+        {
+            ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = ElementsSDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ElementsSDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<Object>("/api/2/jobs/{id}/export", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ExportJob", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </summary>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A unique integer value identifying this job.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ExportJobAsync(int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ExportJobWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        ///  ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </summary>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A unique integer value identifying this job.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ElementsSDK.Client.ApiResponse<Object>> ExportJobWithHttpInfoAsync(int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+
+            var localVarContentType = ElementsSDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ElementsSDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/2/jobs/{id}/export", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ExportJob", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -3687,11 +3888,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3715,7 +3916,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -3761,11 +3962,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3790,7 +3991,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -3842,11 +4043,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3886,7 +4087,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -3940,11 +4141,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3985,7 +4186,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -4031,11 +4232,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4063,7 +4264,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -4111,11 +4312,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4144,7 +4345,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -4190,11 +4391,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4222,7 +4423,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -4270,11 +4471,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4303,7 +4504,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -4347,11 +4548,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4375,7 +4576,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -4421,11 +4622,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4450,7 +4651,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -4494,11 +4695,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4522,7 +4723,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -4568,11 +4769,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4597,7 +4798,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -4659,11 +4860,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4723,7 +4924,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -4787,11 +4988,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4852,7 +5053,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -4896,11 +5097,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4913,7 +5114,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -4959,11 +5160,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4977,7 +5178,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -5039,11 +5240,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5103,7 +5304,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -5167,11 +5368,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5232,7 +5433,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -5272,11 +5473,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5289,7 +5490,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -5331,11 +5532,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5349,7 +5550,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -5411,11 +5612,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5475,7 +5676,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -5539,11 +5740,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5604,7 +5805,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -5642,11 +5843,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5658,7 +5859,7 @@ namespace ElementsSDK.Api
 
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -5698,11 +5899,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5715,7 +5916,7 @@ namespace ElementsSDK.Api
 
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -5755,11 +5956,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5772,7 +5973,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -5814,11 +6015,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5832,7 +6033,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -5872,11 +6073,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5889,7 +6090,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -5931,11 +6132,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5949,7 +6150,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -5993,11 +6194,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -6010,7 +6211,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -6056,11 +6257,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -6074,7 +6275,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -6118,11 +6319,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -6135,7 +6336,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -6181,11 +6382,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -6199,7 +6400,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -6243,11 +6444,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -6260,7 +6461,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("type", ElementsSDK.Client.ClientUtils.ParameterToString(type)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -6306,11 +6507,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -6324,7 +6525,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("type", ElementsSDK.Client.ClientUtils.ParameterToString(type)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -6386,11 +6587,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -6450,7 +6651,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -6514,11 +6715,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -6579,7 +6780,7 @@ namespace ElementsSDK.Api
             }
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -6591,6 +6792,133 @@ namespace ElementsSDK.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetTasksSummary", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </summary>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importJobRequest"></param>
+        /// <returns>ImportJobResponse</returns>
+        public ImportJobResponse ImportJob(ImportJobRequest importJobRequest)
+        {
+            ElementsSDK.Client.ApiResponse<ImportJobResponse> localVarResponse = ImportJobWithHttpInfo(importJobRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </summary>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importJobRequest"></param>
+        /// <returns>ApiResponse of ImportJobResponse</returns>
+        public ElementsSDK.Client.ApiResponse<ImportJobResponse> ImportJobWithHttpInfo(ImportJobRequest importJobRequest)
+        {
+            // verify the required parameter 'importJobRequest' is set
+            if (importJobRequest == null)
+                throw new ElementsSDK.Client.ApiException(400, "Missing required parameter 'importJobRequest' when calling AutomationApi->ImportJob");
+
+            ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = ElementsSDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ElementsSDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = importJobRequest;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<ImportJobResponse>("/api/2/jobs/import", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ImportJob", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </summary>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importJobRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ImportJobResponse</returns>
+        public async System.Threading.Tasks.Task<ImportJobResponse> ImportJobAsync(ImportJobRequest importJobRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            ElementsSDK.Client.ApiResponse<ImportJobResponse> localVarResponse = await ImportJobWithHttpInfoAsync(importJobRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  ### Required permissions    * User account permission: &#x60;None&#x60; (read) / &#x60;tasks:manage&#x60; (write) 
+        /// </summary>
+        /// <exception cref="ElementsSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importJobRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ImportJobResponse)</returns>
+        public async System.Threading.Tasks.Task<ElementsSDK.Client.ApiResponse<ImportJobResponse>> ImportJobWithHttpInfoAsync(ImportJobRequest importJobRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'importJobRequest' is set
+            if (importJobRequest == null)
+                throw new ElementsSDK.Client.ApiException(400, "Missing required parameter 'importJobRequest' when calling AutomationApi->ImportJob");
+
+
+            ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = ElementsSDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ElementsSDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = importJobRequest;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ImportJobResponse>("/api/2/jobs/import", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ImportJob", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -6616,11 +6944,11 @@ namespace ElementsSDK.Api
         {
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = ElementsSDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -6631,7 +6959,7 @@ namespace ElementsSDK.Api
 
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -6670,11 +6998,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -6686,7 +7014,7 @@ namespace ElementsSDK.Api
 
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -6729,11 +7057,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = ElementsSDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -6745,7 +7073,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -6790,11 +7118,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -6807,7 +7135,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -6853,12 +7181,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -6872,7 +7200,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = jobPartialUpdate;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -6920,12 +7248,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -6940,7 +7268,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = jobPartialUpdate;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -6986,12 +7314,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7005,7 +7333,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = schedulePartialUpdate;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -7053,12 +7381,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7073,7 +7401,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = schedulePartialUpdate;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -7119,12 +7447,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7138,7 +7466,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = subtaskPartialUpdate;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -7186,12 +7514,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7206,7 +7534,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = subtaskPartialUpdate;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -7250,11 +7578,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7267,7 +7595,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -7313,11 +7641,11 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7331,7 +7659,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.PathParameters.Add("id", ElementsSDK.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -7377,12 +7705,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7396,7 +7724,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = startJobRequest;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -7444,12 +7772,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7464,7 +7792,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = startJobRequest;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -7508,12 +7836,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7526,7 +7854,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = startTaskRequest;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -7572,12 +7900,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7591,7 +7919,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = startTaskRequest;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -7637,12 +7965,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7656,7 +7984,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = job;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -7704,12 +8032,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7724,7 +8052,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = job;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -7770,12 +8098,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7789,7 +8117,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = schedule;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -7837,12 +8165,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7857,7 +8185,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = schedule;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -7903,12 +8231,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7922,7 +8250,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = subtask;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
@@ -7970,12 +8298,12 @@ namespace ElementsSDK.Api
 
             ElementsSDK.Client.RequestOptions localVarRequestOptions = new ElementsSDK.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -7990,7 +8318,7 @@ namespace ElementsSDK.Api
             localVarRequestOptions.Data = subtask;
 
             // authentication (Bearer) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }

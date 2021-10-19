@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**DeleteTask**](AutomationApi.md#deletetask) | **DELETE** /api/2/tasks/{id} | 
 [**DownloadAllTaskLogs**](AutomationApi.md#downloadalltasklogs) | **GET** /api/2/tasks/logs/download | 
 [**DownloadTaskLog**](AutomationApi.md#downloadtasklog) | **GET** /api/2/tasks/{id}/log/download | 
+[**ExportJob**](AutomationApi.md#exportjob) | **GET** /api/2/jobs/{id}/export | 
 [**GetAllEvents**](AutomationApi.md#getallevents) | **GET** /api/2/events | 
 [**GetAllJobs**](AutomationApi.md#getalljobs) | **GET** /api/2/jobs | 
 [**GetAllSchedules**](AutomationApi.md#getallschedules) | **GET** /api/2/schedules | 
@@ -33,6 +34,7 @@ Method | HTTP request | Description
 [**GetTaskLog**](AutomationApi.md#gettasklog) | **GET** /api/2/tasks/{id}/log | 
 [**GetTaskType**](AutomationApi.md#gettasktype) | **GET** /api/2/tasks/types/{type} | 
 [**GetTasksSummary**](AutomationApi.md#gettaskssummary) | **GET** /api/2/tasks/summary | 
+[**ImportJob**](AutomationApi.md#importjob) | **POST** /api/2/jobs/import | 
 [**KillAllPendingTasks**](AutomationApi.md#killallpendingtasks) | **DELETE** /api/2/tasks/pending | 
 [**KillTask**](AutomationApi.md#killtask) | **POST** /api/2/tasks/{id}/kill | 
 [**PatchJob**](AutomationApi.md#patchjob) | **PATCH** /api/2/jobs/{id} | 
@@ -859,6 +861,80 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| A unique value identifying this task info. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | No body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="exportjob"></a>
+# **ExportJob**
+> void ExportJob (int id)
+
+
+
+### Required permissions    * User account permission: `None` (read) / `tasks:manage` (write) 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using ElementsSDK.Api;
+using ElementsSDK.Client;
+using ElementsSDK.Model;
+
+namespace Example
+{
+    public class ExportJobExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://elements.local";
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AutomationApi(config);
+            var id = 56;  // int | A unique integer value identifying this job.
+
+            try
+            {
+                apiInstance.ExportJob(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AutomationApi.ExportJob: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this job. | 
 
 ### Return type
 
@@ -2341,6 +2417,81 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="importjob"></a>
+# **ImportJob**
+> ImportJobResponse ImportJob (ImportJobRequest importJobRequest)
+
+
+
+### Required permissions    * User account permission: `None` (read) / `tasks:manage` (write) 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using ElementsSDK.Api;
+using ElementsSDK.Client;
+using ElementsSDK.Model;
+
+namespace Example
+{
+    public class ImportJobExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://elements.local";
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AutomationApi(config);
+            var importJobRequest = new ImportJobRequest(); // ImportJobRequest | 
+
+            try
+            {
+                ImportJobResponse result = apiInstance.ImportJob(importJobRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AutomationApi.ImportJob: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **importJobRequest** | [**ImportJobRequest**](ImportJobRequest.md)|  | 
+
+### Return type
+
+[**ImportJobResponse**](ImportJobResponse.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

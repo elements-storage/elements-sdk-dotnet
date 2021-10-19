@@ -155,7 +155,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets AllowChangingPassword
         /// </summary>
@@ -182,7 +181,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets AllowedFsWritePaths
         /// </summary>
@@ -197,7 +195,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Avatar
         /// </summary>
@@ -218,7 +215,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets DefaultPage
         /// </summary>
@@ -239,7 +235,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets EffectivePermissions
         /// </summary>
@@ -254,7 +249,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
@@ -311,7 +305,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets HasPassword
         /// </summary>
@@ -326,7 +319,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Home
         /// </summary>
@@ -413,7 +405,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets TotpEnabled
         /// </summary>

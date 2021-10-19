@@ -46,6 +46,20 @@ namespace ElementsSDK.Model
         public int Id { get; set; }
 
         /// <summary>
+        /// Gets or Sets Roots
+        /// </summary>
+        [DataMember(Name = "roots", EmitDefaultValue = false)]
+        public List<int> Roots { get; private set; }
+
+        /// <summary>
+        /// Returns false as Roots should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeRoots()
+        {
+            return false;
+        }
+        /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
@@ -59,7 +73,20 @@ namespace ElementsSDK.Model
         {
             return false;
         }
+        /// <summary>
+        /// Gets or Sets Shared
+        /// </summary>
+        [DataMember(Name = "shared", EmitDefaultValue = true)]
+        public bool Shared { get; private set; }
 
+        /// <summary>
+        /// Returns false as Shared should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeShared()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Color
         /// </summary>
@@ -74,22 +101,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
-        /// <summary>
-        /// Gets or Sets Root
-        /// </summary>
-        [DataMember(Name = "root", EmitDefaultValue = true)]
-        public int? Root { get; private set; }
-
-        /// <summary>
-        /// Returns false as Root should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeRoot()
-        {
-            return false;
-        }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -99,9 +110,10 @@ namespace ElementsSDK.Model
             var sb = new StringBuilder();
             sb.Append("class TagReference {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Roots: ").Append(Roots).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Shared: ").Append(Shared).Append("\n");
             sb.Append("  Color: ").Append(Color).Append("\n");
-            sb.Append("  Root: ").Append(Root).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -141,19 +153,24 @@ namespace ElementsSDK.Model
                     this.Id.Equals(input.Id)
                 ) && 
                 (
+                    this.Roots == input.Roots ||
+                    this.Roots != null &&
+                    input.Roots != null &&
+                    this.Roots.SequenceEqual(input.Roots)
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.Shared == input.Shared ||
+                    this.Shared.Equals(input.Shared)
+                ) && 
+                (
                     this.Color == input.Color ||
                     (this.Color != null &&
                     this.Color.Equals(input.Color))
-                ) && 
-                (
-                    this.Root == input.Root ||
-                    (this.Root != null &&
-                    this.Root.Equals(input.Root))
                 );
         }
 
@@ -167,12 +184,13 @@ namespace ElementsSDK.Model
             {
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Roots != null)
+                    hashCode = hashCode * 59 + this.Roots.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.Shared.GetHashCode();
                 if (this.Color != null)
                     hashCode = hashCode * 59 + this.Color.GetHashCode();
-                if (this.Root != null)
-                    hashCode = hashCode * 59 + this.Root.GetHashCode();
                 return hashCode;
             }
         }

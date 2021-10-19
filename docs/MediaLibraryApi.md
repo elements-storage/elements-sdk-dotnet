@@ -1121,7 +1121,7 @@ Name | Type | Description  | Notes
 
 <a name="createmediatag"></a>
 # **CreateMediaTag**
-> Tag CreateMediaTag (Tag tag)
+> UnfilteredTag CreateMediaTag (UnfilteredTag unfilteredTag)
 
 
 
@@ -1149,11 +1149,11 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new MediaLibraryApi(config);
-            var tag = new Tag(); // Tag | 
+            var unfilteredTag = new UnfilteredTag(); // UnfilteredTag | 
 
             try
             {
-                Tag result = apiInstance.CreateMediaTag(tag);
+                UnfilteredTag result = apiInstance.CreateMediaTag(unfilteredTag);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1171,11 +1171,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag** | [**Tag**](Tag.md)|  | 
+ **unfilteredTag** | [**UnfilteredTag**](UnfilteredTag.md)|  | 
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**UnfilteredTag**](UnfilteredTag.md)
 
 ### Authorization
 
@@ -2388,7 +2388,7 @@ void (empty response body)
 
 
 
-### Required permissions    * User account permission: `media:access` (read) / `media:roots:manage` (write)   * License component: media 
+### Required permissions    * User account permission: `media:access` (read) / `media:updates:manage` (write)   * License component: media 
 
 ### Example
 ```csharp
@@ -5085,7 +5085,7 @@ Name | Type | Description  | Notes
 
 <a name="getallmediatags"></a>
 # **GetAllMediaTags**
-> List&lt;Tag&gt; GetAllMediaTags (string name = null, string nameIcontains = null, string root = null, string rootIsnull = null, string ordering = null, int? limit = null, int? offset = null, int? forRoot = null)
+> List&lt;UnfilteredTag&gt; GetAllMediaTags (string name = null, string nameIcontains = null, string roots = null, string rootsIsnull = null, string shared = null, string ordering = null, int? limit = null, int? offset = null, int? forRoot = null)
 
 
 
@@ -5115,8 +5115,9 @@ namespace Example
             var apiInstance = new MediaLibraryApi(config);
             var name = name_example;  // string | Filter the returned list by `name`. (optional) 
             var nameIcontains = nameIcontains_example;  // string | Filter the returned list by `name__icontains`. (optional) 
-            var root = root_example;  // string | Filter the returned list by `root`. (optional) 
-            var rootIsnull = rootIsnull_example;  // string | Filter the returned list by `root__isnull`. (optional) 
+            var roots = roots_example;  // string | Filter the returned list by `roots`. (optional) 
+            var rootsIsnull = rootsIsnull_example;  // string | Filter the returned list by `roots__isnull`. (optional) 
+            var shared = shared_example;  // string | Filter the returned list by `shared`. (optional) 
             var ordering = ordering_example;  // string | Which field to use when ordering the results. (optional) 
             var limit = 56;  // int? | Number of results to return per page. (optional) 
             var offset = 56;  // int? | The initial index from which to return the results. (optional) 
@@ -5124,7 +5125,7 @@ namespace Example
 
             try
             {
-                List<Tag> result = apiInstance.GetAllMediaTags(name, nameIcontains, root, rootIsnull, ordering, limit, offset, forRoot);
+                List<UnfilteredTag> result = apiInstance.GetAllMediaTags(name, nameIcontains, roots, rootsIsnull, shared, ordering, limit, offset, forRoot);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -5144,8 +5145,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| Filter the returned list by &#x60;name&#x60;. | [optional] 
  **nameIcontains** | **string**| Filter the returned list by &#x60;name__icontains&#x60;. | [optional] 
- **root** | **string**| Filter the returned list by &#x60;root&#x60;. | [optional] 
- **rootIsnull** | **string**| Filter the returned list by &#x60;root__isnull&#x60;. | [optional] 
+ **roots** | **string**| Filter the returned list by &#x60;roots&#x60;. | [optional] 
+ **rootsIsnull** | **string**| Filter the returned list by &#x60;roots__isnull&#x60;. | [optional] 
+ **shared** | **string**| Filter the returned list by &#x60;shared&#x60;. | [optional] 
  **ordering** | **string**| Which field to use when ordering the results. | [optional] 
  **limit** | **int?**| Number of results to return per page. | [optional] 
  **offset** | **int?**| The initial index from which to return the results. | [optional] 
@@ -5153,7 +5155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;Tag&gt;**](Tag.md)
+[**List&lt;UnfilteredTag&gt;**](UnfilteredTag.md)
 
 ### Authorization
 
@@ -5178,7 +5180,7 @@ Name | Type | Description  | Notes
 
 
 
-### Required permissions    * User account permission: `media:access` (read) / `media:roots:manage` (write)   * License component: media 
+### Required permissions    * User account permission: `media:access` (read) / `media:updates:manage` (write)   * License component: media 
 
 ### Example
 ```csharp
@@ -6465,7 +6467,7 @@ void (empty response body)
 
 
 
-### Required permissions    * User account permission: `media:access` (read) / `media:roots:manage` (write)   * License component: media 
+### Required permissions    * User account permission: `media:access` (read) / `media:updates:manage` (write)   * License component: media 
 
 ### Example
 ```csharp
@@ -7105,7 +7107,7 @@ Name | Type | Description  | Notes
 
 <a name="getmediatag"></a>
 # **GetMediaTag**
-> Tag GetMediaTag (int id, int? forRoot = null)
+> UnfilteredTag GetMediaTag (int id, int? forRoot = null)
 
 
 
@@ -7138,7 +7140,7 @@ namespace Example
 
             try
             {
-                Tag result = apiInstance.GetMediaTag(id, forRoot);
+                UnfilteredTag result = apiInstance.GetMediaTag(id, forRoot);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -7161,7 +7163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**UnfilteredTag**](UnfilteredTag.md)
 
 ### Authorization
 
@@ -9172,7 +9174,7 @@ Name | Type | Description  | Notes
 
 <a name="patchmediatag"></a>
 # **PatchMediaTag**
-> Tag PatchMediaTag (int id, TagPartialUpdate tagPartialUpdate)
+> UnfilteredTag PatchMediaTag (int id, UnfilteredTagPartialUpdate unfilteredTagPartialUpdate)
 
 
 
@@ -9201,11 +9203,11 @@ namespace Example
 
             var apiInstance = new MediaLibraryApi(config);
             var id = 56;  // int | A unique integer value identifying this Tag.
-            var tagPartialUpdate = new TagPartialUpdate(); // TagPartialUpdate | 
+            var unfilteredTagPartialUpdate = new UnfilteredTagPartialUpdate(); // UnfilteredTagPartialUpdate | 
 
             try
             {
-                Tag result = apiInstance.PatchMediaTag(id, tagPartialUpdate);
+                UnfilteredTag result = apiInstance.PatchMediaTag(id, unfilteredTagPartialUpdate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -9224,11 +9226,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this Tag. | 
- **tagPartialUpdate** | [**TagPartialUpdate**](TagPartialUpdate.md)|  | 
+ **unfilteredTagPartialUpdate** | [**UnfilteredTagPartialUpdate**](UnfilteredTagPartialUpdate.md)|  | 
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**UnfilteredTag**](UnfilteredTag.md)
 
 ### Authorization
 
@@ -11226,7 +11228,7 @@ Name | Type | Description  | Notes
 
 <a name="updatemediatag"></a>
 # **UpdateMediaTag**
-> Tag UpdateMediaTag (int id, Tag tag)
+> UnfilteredTag UpdateMediaTag (int id, UnfilteredTag unfilteredTag)
 
 
 
@@ -11255,11 +11257,11 @@ namespace Example
 
             var apiInstance = new MediaLibraryApi(config);
             var id = 56;  // int | A unique integer value identifying this Tag.
-            var tag = new Tag(); // Tag | 
+            var unfilteredTag = new UnfilteredTag(); // UnfilteredTag | 
 
             try
             {
-                Tag result = apiInstance.UpdateMediaTag(id, tag);
+                UnfilteredTag result = apiInstance.UpdateMediaTag(id, unfilteredTag);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -11278,11 +11280,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this Tag. | 
- **tag** | [**Tag**](Tag.md)|  | 
+ **unfilteredTag** | [**UnfilteredTag**](UnfilteredTag.md)|  | 
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**UnfilteredTag**](UnfilteredTag.md)
 
 ### Authorization
 

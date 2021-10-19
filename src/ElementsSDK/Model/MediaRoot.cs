@@ -56,6 +56,7 @@ namespace ElementsSDK.Model
         /// <param name="showRatings">showRatings.</param>
         /// <param name="showSubclips">showSubclips.</param>
         /// <param name="showMarkers">showMarkers.</param>
+        /// <param name="showHistory">showHistory.</param>
         /// <param name="showAiMetadata">showAiMetadata.</param>
         /// <param name="prefetchThumbnailStrips">prefetchThumbnailStrips.</param>
         /// <param name="cover">cover.</param>
@@ -69,7 +70,8 @@ namespace ElementsSDK.Model
         /// <param name="aiConnection">aiConnection.</param>
         /// <param name="aiProxyProfile">aiProxyProfile.</param>
         /// <param name="proxyProfiles">proxyProfiles.</param>
-        public MediaRoot(List<CustomFieldReference> customFields = default(List<CustomFieldReference>), Dictionary<string, string> workflow = default(Dictionary<string, string>), Dictionary<string, string> aiConfig = default(Dictionary<string, string>), Dictionary<string, string> veritoneConfig = default(Dictionary<string, string>), VolumeMiniReference volume = default(VolumeMiniReference), List<JobReference> jobs = default(List<JobReference>), string name = default(string), bool needsRescan = default(bool), string viewMode = default(string), string viewStyle = default(string), string viewDefaultTab = default(string), bool showTags = default(bool), bool showComments = default(bool), bool showLocations = default(bool), bool showCustomFields = default(bool), bool showRatings = default(bool), bool showSubclips = default(bool), bool showMarkers = default(bool), bool showAiMetadata = default(bool), bool prefetchThumbnailStrips = default(bool), string cover = default(string), string nameField = default(string), bool shareComments = default(bool), int shareLinkDuration = default(int), int? defaultProxyProfile = default(int?), int? cloudProxyProfile = default(int?), int? veritoneConnection = default(int?), int? veritoneProxyProfile = default(int?), int? aiConnection = default(int?), int? aiProxyProfile = default(int?), List<int> proxyProfiles = default(List<int>))
+        /// <param name="tags">tags.</param>
+        public MediaRoot(List<CustomFieldReference> customFields = default(List<CustomFieldReference>), Dictionary<string, string> workflow = default(Dictionary<string, string>), Dictionary<string, string> aiConfig = default(Dictionary<string, string>), Dictionary<string, string> veritoneConfig = default(Dictionary<string, string>), VolumeMiniReference volume = default(VolumeMiniReference), List<JobReference> jobs = default(List<JobReference>), string name = default(string), bool needsRescan = default(bool), string viewMode = default(string), string viewStyle = default(string), string viewDefaultTab = default(string), bool showTags = default(bool), bool showComments = default(bool), bool showLocations = default(bool), bool showCustomFields = default(bool), bool showRatings = default(bool), bool showSubclips = default(bool), bool showMarkers = default(bool), bool showHistory = default(bool), bool showAiMetadata = default(bool), bool prefetchThumbnailStrips = default(bool), string cover = default(string), string nameField = default(string), bool shareComments = default(bool), int shareLinkDuration = default(int), int? defaultProxyProfile = default(int?), int? cloudProxyProfile = default(int?), int? veritoneConnection = default(int?), int? veritoneProxyProfile = default(int?), int? aiConnection = default(int?), int? aiProxyProfile = default(int?), List<int> proxyProfiles = default(List<int>), List<int> tags = default(List<int>))
         {
             // to ensure "volume" is required (not null)
             this.Volume = volume ?? throw new ArgumentNullException("volume is a required property for MediaRoot and cannot be null");
@@ -91,6 +93,7 @@ namespace ElementsSDK.Model
             this.ShowRatings = showRatings;
             this.ShowSubclips = showSubclips;
             this.ShowMarkers = showMarkers;
+            this.ShowHistory = showHistory;
             this.ShowAiMetadata = showAiMetadata;
             this.PrefetchThumbnailStrips = prefetchThumbnailStrips;
             this.Cover = cover;
@@ -104,6 +107,7 @@ namespace ElementsSDK.Model
             this.AiConnection = aiConnection;
             this.AiProxyProfile = aiProxyProfile;
             this.ProxyProfiles = proxyProfiles;
+            this.Tags = tags;
         }
 
         /// <summary>
@@ -120,7 +124,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets CustomFields
         /// </summary>
@@ -165,7 +168,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ResolvedPermissions
         /// </summary>
@@ -180,7 +182,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Jobs
         /// </summary>
@@ -201,7 +202,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
@@ -222,7 +222,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets NeedsRescan
         /// </summary>
@@ -288,6 +287,12 @@ namespace ElementsSDK.Model
         /// </summary>
         [DataMember(Name = "show_markers", EmitDefaultValue = true)]
         public bool ShowMarkers { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ShowHistory
+        /// </summary>
+        [DataMember(Name = "show_history", EmitDefaultValue = true)]
+        public bool ShowHistory { get; set; }
 
         /// <summary>
         /// Gets or Sets ShowAiMetadata
@@ -368,6 +373,12 @@ namespace ElementsSDK.Model
         public List<int> ProxyProfiles { get; set; }
 
         /// <summary>
+        /// Gets or Sets Tags
+        /// </summary>
+        [DataMember(Name = "tags", EmitDefaultValue = false)]
+        public List<int> Tags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -398,6 +409,7 @@ namespace ElementsSDK.Model
             sb.Append("  ShowRatings: ").Append(ShowRatings).Append("\n");
             sb.Append("  ShowSubclips: ").Append(ShowSubclips).Append("\n");
             sb.Append("  ShowMarkers: ").Append(ShowMarkers).Append("\n");
+            sb.Append("  ShowHistory: ").Append(ShowHistory).Append("\n");
             sb.Append("  ShowAiMetadata: ").Append(ShowAiMetadata).Append("\n");
             sb.Append("  PrefetchThumbnailStrips: ").Append(PrefetchThumbnailStrips).Append("\n");
             sb.Append("  Cover: ").Append(Cover).Append("\n");
@@ -411,6 +423,7 @@ namespace ElementsSDK.Model
             sb.Append("  AiConnection: ").Append(AiConnection).Append("\n");
             sb.Append("  AiProxyProfile: ").Append(AiProxyProfile).Append("\n");
             sb.Append("  ProxyProfiles: ").Append(ProxyProfiles).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -559,6 +572,10 @@ namespace ElementsSDK.Model
                     this.ShowMarkers.Equals(input.ShowMarkers)
                 ) && 
                 (
+                    this.ShowHistory == input.ShowHistory ||
+                    this.ShowHistory.Equals(input.ShowHistory)
+                ) && 
+                (
                     this.ShowAiMetadata == input.ShowAiMetadata ||
                     this.ShowAiMetadata.Equals(input.ShowAiMetadata)
                 ) && 
@@ -619,6 +636,12 @@ namespace ElementsSDK.Model
                     this.ProxyProfiles != null &&
                     input.ProxyProfiles != null &&
                     this.ProxyProfiles.SequenceEqual(input.ProxyProfiles)
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -668,6 +691,7 @@ namespace ElementsSDK.Model
                 hashCode = hashCode * 59 + this.ShowRatings.GetHashCode();
                 hashCode = hashCode * 59 + this.ShowSubclips.GetHashCode();
                 hashCode = hashCode * 59 + this.ShowMarkers.GetHashCode();
+                hashCode = hashCode * 59 + this.ShowHistory.GetHashCode();
                 hashCode = hashCode * 59 + this.ShowAiMetadata.GetHashCode();
                 hashCode = hashCode * 59 + this.PrefetchThumbnailStrips.GetHashCode();
                 if (this.Cover != null)
@@ -690,6 +714,8 @@ namespace ElementsSDK.Model
                     hashCode = hashCode * 59 + this.AiProxyProfile.GetHashCode();
                 if (this.ProxyProfiles != null)
                     hashCode = hashCode * 59 + this.ProxyProfiles.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

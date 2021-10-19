@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int** |  | [optional] [readonly] 
-**Labels** | **List&lt;string&gt;** |  | 
+**Labels** | **List&lt;string&gt;** |  | [optional] [readonly] 
 **Options** | **List&lt;string&gt;** |  | 
 **Name** | **string** |  | 
 **Order** | **int** |  | [optional] 

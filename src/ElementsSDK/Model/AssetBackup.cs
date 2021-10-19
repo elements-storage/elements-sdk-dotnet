@@ -57,7 +57,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets TapeFile
         /// </summary>
@@ -84,7 +83,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets CustomFieldsSnapshot
         /// </summary>

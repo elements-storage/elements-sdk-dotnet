@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **ShowSubclips** | **bool** |  | [optional] 
 **ShowAiMetadata** | **bool** |  | [optional] 
 **ShowMarkers** | **bool** |  | [optional] 
+**ShowHistory** | **bool** |  | [optional] 
 **Root** | **int** |  | 
 **IsTemporaryForToken** | **int?** |  | [optional] 
 

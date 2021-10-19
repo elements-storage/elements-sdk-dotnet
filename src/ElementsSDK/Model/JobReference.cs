@@ -139,7 +139,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Schedules
         /// </summary>
@@ -154,7 +153,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets AllowUsers
         /// </summary>
@@ -169,7 +167,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets AllowGroups
         /// </summary>
@@ -184,7 +181,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Startable
         /// </summary>
@@ -199,12 +195,11 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets VariableDefinitions
         /// </summary>
         [DataMember(Name = "variable_definitions", EmitDefaultValue = false)]
-        public List<string> VariableDefinitions { get; private set; }
+        public List<Dictionary<string, string>> VariableDefinitions { get; private set; }
 
         /// <summary>
         /// Returns false as VariableDefinitions should not be serialized given that it's read-only.
@@ -214,7 +209,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets MediaRoots
         /// </summary>
@@ -229,7 +223,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets WebhookUrl
         /// </summary>
@@ -244,7 +237,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
@@ -259,7 +251,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Enabled
         /// </summary>
@@ -274,7 +265,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets AllowOthersToStart
         /// </summary>
@@ -289,7 +279,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets AllowClientToStart
         /// </summary>
@@ -304,7 +293,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ShowAsButton
         /// </summary>
@@ -319,7 +307,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Hook
         /// </summary>
@@ -334,7 +321,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets WebhookSecret
         /// </summary>
@@ -349,7 +335,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets SecurityContext
         /// </summary>
@@ -364,7 +349,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets PartOfWorkflowFor
         /// </summary>
@@ -379,7 +363,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

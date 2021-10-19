@@ -39,11 +39,14 @@ namespace ElementsSDK.Model
         /// Initializes a new instance of the <see cref="MetadataItem" /> class.
         /// </summary>
         /// <param name="customFields">customFields (required).</param>
+        /// <param name="tags">tags (required).</param>
         /// <param name="path">path (required).</param>
-        public MetadataItem(Dictionary<string, string> customFields = default(Dictionary<string, string>), string path = default(string))
+        public MetadataItem(Dictionary<string, string> customFields = default(Dictionary<string, string>), List<Dictionary<string, string>> tags = default(List<Dictionary<string, string>>), string path = default(string))
         {
             // to ensure "customFields" is required (not null)
             this.CustomFields = customFields ?? throw new ArgumentNullException("customFields is a required property for MetadataItem and cannot be null");
+            // to ensure "tags" is required (not null)
+            this.Tags = tags ?? throw new ArgumentNullException("tags is a required property for MetadataItem and cannot be null");
             // to ensure "path" is required (not null)
             this.Path = path ?? throw new ArgumentNullException("path is a required property for MetadataItem and cannot be null");
         }
@@ -53,6 +56,12 @@ namespace ElementsSDK.Model
         /// </summary>
         [DataMember(Name = "custom_fields", IsRequired = true, EmitDefaultValue = false)]
         public Dictionary<string, string> CustomFields { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Tags
+        /// </summary>
+        [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = false)]
+        public List<Dictionary<string, string>> Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets Path
@@ -69,6 +78,7 @@ namespace ElementsSDK.Model
             var sb = new StringBuilder();
             sb.Append("class MetadataItem {\n");
             sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Path: ").Append(Path).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -111,6 +121,12 @@ namespace ElementsSDK.Model
                     this.CustomFields.SequenceEqual(input.CustomFields)
                 ) && 
                 (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
                     this.Path == input.Path ||
                     (this.Path != null &&
                     this.Path.Equals(input.Path))
@@ -128,6 +144,8 @@ namespace ElementsSDK.Model
                 int hashCode = 41;
                 if (this.CustomFields != null)
                     hashCode = hashCode * 59 + this.CustomFields.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.Path != null)
                     hashCode = hashCode * 59 + this.Path.GetHashCode();
                 return hashCode;

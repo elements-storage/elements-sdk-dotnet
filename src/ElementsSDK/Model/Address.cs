@@ -67,7 +67,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets _Address
         /// </summary>

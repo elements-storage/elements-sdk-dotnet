@@ -74,7 +74,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Asset
         /// </summary>
@@ -115,7 +114,7 @@ namespace ElementsSDK.Model
         /// Gets or Sets AddedTags
         /// </summary>
         [DataMember(Name = "added_tags", EmitDefaultValue = false)]
-        public List<Tag> AddedTags { get; private set; }
+        public List<UnfilteredTag> AddedTags { get; private set; }
 
         /// <summary>
         /// Returns false as AddedTags should not be serialized given that it's read-only.
@@ -125,12 +124,11 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets RemovedTags
         /// </summary>
         [DataMember(Name = "removed_tags", EmitDefaultValue = false)]
-        public List<Tag> RemovedTags { get; private set; }
+        public List<UnfilteredTag> RemovedTags { get; private set; }
 
         /// <summary>
         /// Returns false as RemovedTags should not be serialized given that it's read-only.
@@ -140,7 +138,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
@@ -161,7 +158,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Rating
         /// </summary>

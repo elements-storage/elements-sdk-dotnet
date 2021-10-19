@@ -58,7 +58,13 @@ namespace ElementsSDK.Model
             /// Enum Vantage for value: vantage
             /// </summary>
             [EnumMember(Value = "vantage")]
-            Vantage = 4
+            Vantage = 4,
+
+            /// <summary>
+            /// Enum Noop for value: noop
+            /// </summary>
+            [EnumMember(Value = "noop")]
+            Noop = 5
 
         }
 
@@ -188,7 +194,6 @@ namespace ElementsSDK.Model
         /// <param name="bitrate">bitrate.</param>
         /// <param name="audioBitrate">audioBitrate.</param>
         /// <param name="variantsLimit">variantsLimit.</param>
-        /// <param name="enableRealtimeRead">enableRealtimeRead.</param>
         /// <param name="enableDenseFilmstrip">enableDenseFilmstrip.</param>
         /// <param name="enableWatermark">enableWatermark.</param>
         /// <param name="watermarkImage">watermarkImage.</param>
@@ -207,7 +212,7 @@ namespace ElementsSDK.Model
         /// <param name="vantageWorkflowId">vantageWorkflowId.</param>
         /// <param name="externalTranscoderStagingPath">externalTranscoderStagingPath.</param>
         /// <param name="externalTranscoder">externalTranscoder.</param>
-        public ProxyProfile(string name = default(string), ProxyGeneratorEnum? proxyGenerator = default(ProxyGeneratorEnum?), string resolution = default(string), RateControlEnum? rateControl = default(RateControlEnum?), int? crf = default(int?), int? bitrate = default(int?), int audioBitrate = default(int), int variantsLimit = default(int), bool enableRealtimeRead = default(bool), bool enableDenseFilmstrip = default(bool), bool enableWatermark = default(bool), string watermarkImage = default(string), WatermarkPositionEnum? watermarkPosition = default(WatermarkPositionEnum?), decimal watermarkOpacity = default(decimal), decimal watermarkSize = default(decimal), bool enableTimecode = default(bool), TimecodePositionEnum? timecodePosition = default(TimecodePositionEnum?), decimal timecodeOpacity = default(decimal), decimal timecodeSize = default(decimal), string lut = default(string), string hotfolderCopyTo = default(string), string hotfolderReadFrom = default(string), int hotfolderQueueTimeout = default(int), int hotfolderEncodeTimeout = default(int), string vantageWorkflowId = default(string), string externalTranscoderStagingPath = default(string), int? externalTranscoder = default(int?))
+        public ProxyProfile(string name = default(string), ProxyGeneratorEnum? proxyGenerator = default(ProxyGeneratorEnum?), string resolution = default(string), RateControlEnum? rateControl = default(RateControlEnum?), int? crf = default(int?), int? bitrate = default(int?), int audioBitrate = default(int), int variantsLimit = default(int), bool enableDenseFilmstrip = default(bool), bool enableWatermark = default(bool), string watermarkImage = default(string), WatermarkPositionEnum? watermarkPosition = default(WatermarkPositionEnum?), decimal watermarkOpacity = default(decimal), decimal watermarkSize = default(decimal), bool enableTimecode = default(bool), TimecodePositionEnum? timecodePosition = default(TimecodePositionEnum?), decimal timecodeOpacity = default(decimal), decimal timecodeSize = default(decimal), string lut = default(string), string hotfolderCopyTo = default(string), string hotfolderReadFrom = default(string), int hotfolderQueueTimeout = default(int), int hotfolderEncodeTimeout = default(int), string vantageWorkflowId = default(string), string externalTranscoderStagingPath = default(string), int? externalTranscoder = default(int?))
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for ProxyProfile and cannot be null");
@@ -218,7 +223,6 @@ namespace ElementsSDK.Model
             this.Bitrate = bitrate;
             this.AudioBitrate = audioBitrate;
             this.VariantsLimit = variantsLimit;
-            this.EnableRealtimeRead = enableRealtimeRead;
             this.EnableDenseFilmstrip = enableDenseFilmstrip;
             this.EnableWatermark = enableWatermark;
             this.WatermarkImage = watermarkImage;
@@ -253,7 +257,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
@@ -289,12 +292,6 @@ namespace ElementsSDK.Model
         /// </summary>
         [DataMember(Name = "variants_limit", EmitDefaultValue = false)]
         public int VariantsLimit { get; set; }
-
-        /// <summary>
-        /// Gets or Sets EnableRealtimeRead
-        /// </summary>
-        [DataMember(Name = "enable_realtime_read", EmitDefaultValue = true)]
-        public bool EnableRealtimeRead { get; set; }
 
         /// <summary>
         /// Gets or Sets EnableDenseFilmstrip
@@ -409,7 +406,6 @@ namespace ElementsSDK.Model
             sb.Append("  Bitrate: ").Append(Bitrate).Append("\n");
             sb.Append("  AudioBitrate: ").Append(AudioBitrate).Append("\n");
             sb.Append("  VariantsLimit: ").Append(VariantsLimit).Append("\n");
-            sb.Append("  EnableRealtimeRead: ").Append(EnableRealtimeRead).Append("\n");
             sb.Append("  EnableDenseFilmstrip: ").Append(EnableDenseFilmstrip).Append("\n");
             sb.Append("  EnableWatermark: ").Append(EnableWatermark).Append("\n");
             sb.Append("  WatermarkImage: ").Append(WatermarkImage).Append("\n");
@@ -501,10 +497,6 @@ namespace ElementsSDK.Model
                 (
                     this.VariantsLimit == input.VariantsLimit ||
                     this.VariantsLimit.Equals(input.VariantsLimit)
-                ) && 
-                (
-                    this.EnableRealtimeRead == input.EnableRealtimeRead ||
-                    this.EnableRealtimeRead.Equals(input.EnableRealtimeRead)
                 ) && 
                 (
                     this.EnableDenseFilmstrip == input.EnableDenseFilmstrip ||
@@ -609,7 +601,6 @@ namespace ElementsSDK.Model
                     hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
                 hashCode = hashCode * 59 + this.AudioBitrate.GetHashCode();
                 hashCode = hashCode * 59 + this.VariantsLimit.GetHashCode();
-                hashCode = hashCode * 59 + this.EnableRealtimeRead.GetHashCode();
                 hashCode = hashCode * 59 + this.EnableDenseFilmstrip.GetHashCode();
                 hashCode = hashCode * 59 + this.EnableWatermark.GetHashCode();
                 if (this.WatermarkImage != null)

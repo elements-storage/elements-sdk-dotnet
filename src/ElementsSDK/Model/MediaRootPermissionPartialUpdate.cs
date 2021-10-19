@@ -53,9 +53,10 @@ namespace ElementsSDK.Model
         /// <param name="showSubclips">showSubclips.</param>
         /// <param name="showAiMetadata">showAiMetadata.</param>
         /// <param name="showMarkers">showMarkers.</param>
+        /// <param name="showHistory">showHistory.</param>
         /// <param name="root">root.</param>
         /// <param name="isTemporaryForToken">isTemporaryForToken.</param>
-        public MediaRootPermissionPartialUpdate(ElementsUserMiniReference user = default(ElementsUserMiniReference), ElementsGroupReference group = default(ElementsGroupReference), string path = default(string), bool allowCreate = default(bool), bool allowWriteFs = default(bool), bool allowWriteDb = default(bool), bool allowProxyDownload = default(bool), bool allowOriginalDownload = default(bool), bool allowUpload = default(bool), bool allowSharing = default(bool), bool allowDeleteFs = default(bool), bool allowDeleteDb = default(bool), bool showTags = default(bool), bool showComments = default(bool), bool showLocations = default(bool), bool showCustomFields = default(bool), bool showRatings = default(bool), bool showSubclips = default(bool), bool showAiMetadata = default(bool), bool showMarkers = default(bool), int root = default(int), int? isTemporaryForToken = default(int?))
+        public MediaRootPermissionPartialUpdate(ElementsUserMiniReference user = default(ElementsUserMiniReference), ElementsGroupReference group = default(ElementsGroupReference), string path = default(string), bool allowCreate = default(bool), bool allowWriteFs = default(bool), bool allowWriteDb = default(bool), bool allowProxyDownload = default(bool), bool allowOriginalDownload = default(bool), bool allowUpload = default(bool), bool allowSharing = default(bool), bool allowDeleteFs = default(bool), bool allowDeleteDb = default(bool), bool showTags = default(bool), bool showComments = default(bool), bool showLocations = default(bool), bool showCustomFields = default(bool), bool showRatings = default(bool), bool showSubclips = default(bool), bool showAiMetadata = default(bool), bool showMarkers = default(bool), bool showHistory = default(bool), int root = default(int), int? isTemporaryForToken = default(int?))
         {
             this.User = user;
             this.Group = group;
@@ -77,6 +78,7 @@ namespace ElementsSDK.Model
             this.ShowSubclips = showSubclips;
             this.ShowAiMetadata = showAiMetadata;
             this.ShowMarkers = showMarkers;
+            this.ShowHistory = showHistory;
             this.Root = root;
             this.IsTemporaryForToken = isTemporaryForToken;
         }
@@ -202,6 +204,12 @@ namespace ElementsSDK.Model
         public bool ShowMarkers { get; set; }
 
         /// <summary>
+        /// Gets or Sets ShowHistory
+        /// </summary>
+        [DataMember(Name = "show_history", EmitDefaultValue = true)]
+        public bool ShowHistory { get; set; }
+
+        /// <summary>
         /// Gets or Sets Root
         /// </summary>
         [DataMember(Name = "root", EmitDefaultValue = false)]
@@ -241,6 +249,7 @@ namespace ElementsSDK.Model
             sb.Append("  ShowSubclips: ").Append(ShowSubclips).Append("\n");
             sb.Append("  ShowAiMetadata: ").Append(ShowAiMetadata).Append("\n");
             sb.Append("  ShowMarkers: ").Append(ShowMarkers).Append("\n");
+            sb.Append("  ShowHistory: ").Append(ShowHistory).Append("\n");
             sb.Append("  Root: ").Append(Root).Append("\n");
             sb.Append("  IsTemporaryForToken: ").Append(IsTemporaryForToken).Append("\n");
             sb.Append("}\n");
@@ -361,6 +370,10 @@ namespace ElementsSDK.Model
                     this.ShowMarkers.Equals(input.ShowMarkers)
                 ) && 
                 (
+                    this.ShowHistory == input.ShowHistory ||
+                    this.ShowHistory.Equals(input.ShowHistory)
+                ) && 
+                (
                     this.Root == input.Root ||
                     this.Root.Equals(input.Root)
                 ) && 
@@ -403,6 +416,7 @@ namespace ElementsSDK.Model
                 hashCode = hashCode * 59 + this.ShowSubclips.GetHashCode();
                 hashCode = hashCode * 59 + this.ShowAiMetadata.GetHashCode();
                 hashCode = hashCode * 59 + this.ShowMarkers.GetHashCode();
+                hashCode = hashCode * 59 + this.ShowHistory.GetHashCode();
                 hashCode = hashCode * 59 + this.Root.GetHashCode();
                 if (this.IsTemporaryForToken != null)
                     hashCode = hashCode * 59 + this.IsTemporaryForToken.GetHashCode();

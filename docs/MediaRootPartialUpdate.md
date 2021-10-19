@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **ShowRatings** | **bool** |  | [optional] 
 **ShowSubclips** | **bool** |  | [optional] 
 **ShowMarkers** | **bool** |  | [optional] 
+**ShowHistory** | **bool** |  | [optional] 
 **ShowAiMetadata** | **bool** |  | [optional] 
 **PrefetchThumbnailStrips** | **bool** |  | [optional] 
 **Cover** | **string** |  | [optional] 
@@ -36,6 +37,7 @@ Name | Type | Description | Notes
 **AiConnection** | **int?** |  | [optional] 
 **AiProxyProfile** | **int?** |  | [optional] 
 **ProxyProfiles** | **List&lt;int&gt;** |  | [optional] 
+**Tags** | **List&lt;int&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

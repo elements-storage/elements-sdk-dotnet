@@ -978,7 +978,7 @@ void (empty response body)
 
 <a name="createworkspace"></a>
 # **CreateWorkspace**
-> Workspace CreateWorkspace (Workspace workspace)
+> WorkspaceDetail CreateWorkspace (WorkspaceDetail workspaceDetail)
 
 
 
@@ -1006,11 +1006,11 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi(config);
-            var workspace = new Workspace(); // Workspace | 
+            var workspaceDetail = new WorkspaceDetail(); // WorkspaceDetail | 
 
             try
             {
-                Workspace result = apiInstance.CreateWorkspace(workspace);
+                WorkspaceDetail result = apiInstance.CreateWorkspace(workspaceDetail);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1028,11 +1028,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workspace** | [**Workspace**](Workspace.md)|  | 
+ **workspaceDetail** | [**WorkspaceDetail**](WorkspaceDetail.md)|  | 
 
 ### Return type
 
-[**Workspace**](Workspace.md)
+[**WorkspaceDetail**](WorkspaceDetail.md)
 
 ### Authorization
 
@@ -3442,7 +3442,7 @@ Name | Type | Description  | Notes
 
 <a name="getworkspace"></a>
 # **GetWorkspace**
-> Workspace GetWorkspace (int id)
+> WorkspaceDetail GetWorkspace (int id)
 
 
 
@@ -3474,7 +3474,7 @@ namespace Example
 
             try
             {
-                Workspace result = apiInstance.GetWorkspace(id);
+                WorkspaceDetail result = apiInstance.GetWorkspace(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3496,7 +3496,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Workspace**](Workspace.md)
+[**WorkspaceDetail**](WorkspaceDetail.md)
 
 ### Authorization
 
@@ -4209,7 +4209,7 @@ Name | Type | Description  | Notes
 
 <a name="patchworkspace"></a>
 # **PatchWorkspace**
-> Workspace PatchWorkspace (int id, WorkspacePartialUpdate workspacePartialUpdate)
+> WorkspaceDetail PatchWorkspace (int id, WorkspaceDetailPartialUpdate workspaceDetailPartialUpdate)
 
 
 
@@ -4238,11 +4238,11 @@ namespace Example
 
             var apiInstance = new StorageApi(config);
             var id = 56;  // int | A unique integer value identifying this workspace.
-            var workspacePartialUpdate = new WorkspacePartialUpdate(); // WorkspacePartialUpdate | 
+            var workspaceDetailPartialUpdate = new WorkspaceDetailPartialUpdate(); // WorkspaceDetailPartialUpdate | 
 
             try
             {
-                Workspace result = apiInstance.PatchWorkspace(id, workspacePartialUpdate);
+                WorkspaceDetail result = apiInstance.PatchWorkspace(id, workspaceDetailPartialUpdate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -4261,11 +4261,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this workspace. | 
- **workspacePartialUpdate** | [**WorkspacePartialUpdate**](WorkspacePartialUpdate.md)|  | 
+ **workspaceDetailPartialUpdate** | [**WorkspaceDetailPartialUpdate**](WorkspaceDetailPartialUpdate.md)|  | 
 
 ### Return type
 
-[**Workspace**](Workspace.md)
+[**WorkspaceDetail**](WorkspaceDetail.md)
 
 ### Authorization
 
@@ -5278,7 +5278,7 @@ Name | Type | Description  | Notes
 
 <a name="updateworkspace"></a>
 # **UpdateWorkspace**
-> Workspace UpdateWorkspace (int id, Workspace workspace)
+> WorkspaceDetail UpdateWorkspace (int id, WorkspaceDetail workspaceDetail)
 
 
 
@@ -5307,11 +5307,11 @@ namespace Example
 
             var apiInstance = new StorageApi(config);
             var id = 56;  // int | A unique integer value identifying this workspace.
-            var workspace = new Workspace(); // Workspace | 
+            var workspaceDetail = new WorkspaceDetail(); // WorkspaceDetail | 
 
             try
             {
-                Workspace result = apiInstance.UpdateWorkspace(id, workspace);
+                WorkspaceDetail result = apiInstance.UpdateWorkspace(id, workspaceDetail);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -5330,11 +5330,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this workspace. | 
- **workspace** | [**Workspace**](Workspace.md)|  | 
+ **workspaceDetail** | [**WorkspaceDetail**](WorkspaceDetail.md)|  | 
 
 ### Return type
 
-[**Workspace**](Workspace.md)
+[**WorkspaceDetail**](WorkspaceDetail.md)
 
 ### Authorization
 

@@ -41,7 +41,7 @@ namespace ElementsSDK.Model
         /// <param name="project">project (required).</param>
         /// <param name="sequence">sequence (required).</param>
         /// <param name="format">format (required).</param>
-        public TimelineExportRequest(Object project = default(Object), Object sequence = default(Object), string format = default(string))
+        public TimelineExportRequest(Object project = default(Object), string sequence = default(string), string format = default(string))
         {
             // to ensure "project" is required (not null)
             this.Project = project ?? throw new ArgumentNullException("project is a required property for TimelineExportRequest and cannot be null");
@@ -61,7 +61,7 @@ namespace ElementsSDK.Model
         /// Gets or Sets Sequence
         /// </summary>
         [DataMember(Name = "sequence", IsRequired = true, EmitDefaultValue = false)]
-        public Object Sequence { get; set; }
+        public string Sequence { get; set; }
 
         /// <summary>
         /// Gets or Sets Format

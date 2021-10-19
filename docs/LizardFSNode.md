@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Node** | [**StorageNodeMini**](StorageNodeMini.md) |  | [optional] 
 **Host** | **string** |  | 
 **Online** | **bool** |  | 
-**Version** | **string** |  | 
+**_Version** | **string** |  | 
 **Chunks** | **int** |  | 
 **SizeTotal** | **int** |  | 
 **SizeUsed** | **int** |  | 

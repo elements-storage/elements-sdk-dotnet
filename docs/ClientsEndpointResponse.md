@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Version** | **string** |  | 
+**_Version** | **string** |  | 
 **FullVersion** | **string** |  | 
 **Platform** | **string** |  | 
 **File** | **string** |  | 

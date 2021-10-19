@@ -73,6 +73,7 @@ Class | Method | HTTP request | Description
 *AutomationApi* | [**DeleteTask**](docs/AutomationApi.md#deletetask) | **DELETE** /api/2/tasks/{id} | 
 *AutomationApi* | [**DownloadAllTaskLogs**](docs/AutomationApi.md#downloadalltasklogs) | **GET** /api/2/tasks/logs/download | 
 *AutomationApi* | [**DownloadTaskLog**](docs/AutomationApi.md#downloadtasklog) | **GET** /api/2/tasks/{id}/log/download | 
+*AutomationApi* | [**ExportJob**](docs/AutomationApi.md#exportjob) | **GET** /api/2/jobs/{id}/export | 
 *AutomationApi* | [**GetAllEvents**](docs/AutomationApi.md#getallevents) | **GET** /api/2/events | 
 *AutomationApi* | [**GetAllJobs**](docs/AutomationApi.md#getalljobs) | **GET** /api/2/jobs | 
 *AutomationApi* | [**GetAllSchedules**](docs/AutomationApi.md#getallschedules) | **GET** /api/2/schedules | 
@@ -91,6 +92,7 @@ Class | Method | HTTP request | Description
 *AutomationApi* | [**GetTaskLog**](docs/AutomationApi.md#gettasklog) | **GET** /api/2/tasks/{id}/log | 
 *AutomationApi* | [**GetTaskType**](docs/AutomationApi.md#gettasktype) | **GET** /api/2/tasks/types/{type} | 
 *AutomationApi* | [**GetTasksSummary**](docs/AutomationApi.md#gettaskssummary) | **GET** /api/2/tasks/summary | 
+*AutomationApi* | [**ImportJob**](docs/AutomationApi.md#importjob) | **POST** /api/2/jobs/import | 
 *AutomationApi* | [**KillAllPendingTasks**](docs/AutomationApi.md#killallpendingtasks) | **DELETE** /api/2/tasks/pending | 
 *AutomationApi* | [**KillTask**](docs/AutomationApi.md#killtask) | **POST** /api/2/tasks/{id}/kill | 
 *AutomationApi* | [**PatchJob**](docs/AutomationApi.md#patchjob) | **PATCH** /api/2/jobs/{id} | 
@@ -159,6 +161,7 @@ Class | Method | HTTP request | Description
 *MainApi* | [**EnableUserTOTP**](docs/MainApi.md#enableusertotp) | **POST** /api/2/users/{id}/totp | 
 *MainApi* | [**FinishUpload**](docs/MainApi.md#finishupload) | **POST** /api/2/uploads/finish | 
 *MainApi* | [**FixLDAPGroupMemberships**](docs/MainApi.md#fixldapgroupmemberships) | **POST** /api/2/ldap-servers/{id}/fix-memberships | 
+*MainApi* | [**GetAllClientSessions**](docs/MainApi.md#getallclientsessions) | **GET** /api/2/client-sessions | 
 *MainApi* | [**GetAllDownloadArchives**](docs/MainApi.md#getalldownloadarchives) | **GET** /api/2/download-archive | 
 *MainApi* | [**GetAllDownloads**](docs/MainApi.md#getalldownloads) | **GET** /api/2/downloads | 
 *MainApi* | [**GetAllGroups**](docs/MainApi.md#getallgroups) | **GET** /api/2/groups | 
@@ -170,6 +173,7 @@ Class | Method | HTTP request | Description
 *MainApi* | [**GetCertificateConfiguration**](docs/MainApi.md#getcertificateconfiguration) | **GET** /api/2/system/certificate | 
 *MainApi* | [**GetClientDownloadFile**](docs/MainApi.md#getclientdownloadfile) | **GET** /api/2/downloads/clients/{file} | 
 *MainApi* | [**GetClientDownloads**](docs/MainApi.md#getclientdownloads) | **GET** /api/2/downloads/clients | 
+*MainApi* | [**GetClientSession**](docs/MainApi.md#getclientsession) | **GET** /api/2/client-sessions/{id} | 
 *MainApi* | [**GetCurrentWorkstation**](docs/MainApi.md#getcurrentworkstation) | **GET** /api/2/workstations/current | 
 *MainApi* | [**GetDownload**](docs/MainApi.md#getdownload) | **GET** /api/2/downloads/{id} | 
 *MainApi* | [**GetDownloadArchive**](docs/MainApi.md#getdownloadarchive) | **GET** /api/2/download-archive/{id} | 
@@ -597,6 +601,8 @@ Class | Method | HTTP request | Description
  - [Model.GlobalAlert](docs/GlobalAlert.md)
  - [Model.IOStat](docs/IOStat.md)
  - [Model.ImpersonationEndpointRequest](docs/ImpersonationEndpointRequest.md)
+ - [Model.ImportJobRequest](docs/ImportJobRequest.md)
+ - [Model.ImportJobResponse](docs/ImportJobResponse.md)
  - [Model.InlineResponse200](docs/InlineResponse200.md)
  - [Model.InlineResponse2001](docs/InlineResponse2001.md)
  - [Model.InlineResponse2002](docs/InlineResponse2002.md)
@@ -625,6 +631,7 @@ Class | Method | HTTP request | Description
  - [Model.MarkerPartialUpdate](docs/MarkerPartialUpdate.md)
  - [Model.MediaFile](docs/MediaFile.md)
  - [Model.MediaFileBundle](docs/MediaFileBundle.md)
+ - [Model.MediaFileBundleMini](docs/MediaFileBundleMini.md)
  - [Model.MediaFileBundleMiniReference](docs/MediaFileBundleMiniReference.md)
  - [Model.MediaFileContents](docs/MediaFileContents.md)
  - [Model.MediaFileMini](docs/MediaFileMini.md)
@@ -657,6 +664,7 @@ Class | Method | HTTP request | Description
  - [Model.Path](docs/Path.md)
  - [Model.PathInput](docs/PathInput.md)
  - [Model.Production](docs/Production.md)
+ - [Model.ProductionMiniReference](docs/ProductionMiniReference.md)
  - [Model.ProductionPartialUpdate](docs/ProductionPartialUpdate.md)
  - [Model.ProductionReference](docs/ProductionReference.md)
  - [Model.Proxy](docs/Proxy.md)
@@ -730,9 +738,7 @@ Class | Method | HTTP request | Description
  - [Model.SyncTOTP](docs/SyncTOTP.md)
  - [Model.SyncTOTPRequest](docs/SyncTOTPRequest.md)
  - [Model.SystemInfoEndpointResponse](docs/SystemInfoEndpointResponse.md)
- - [Model.Tag](docs/Tag.md)
  - [Model.TagMediaDirectoryRequest](docs/TagMediaDirectoryRequest.md)
- - [Model.TagPartialUpdate](docs/TagPartialUpdate.md)
  - [Model.TagReference](docs/TagReference.md)
  - [Model.Tape](docs/Tape.md)
  - [Model.TapeFile](docs/TapeFile.md)
@@ -775,6 +781,8 @@ Class | Method | HTTP request | Description
  - [Model.TraceNode](docs/TraceNode.md)
  - [Model.TranscoderProfile](docs/TranscoderProfile.md)
  - [Model.TypeDocumentation](docs/TypeDocumentation.md)
+ - [Model.UnfilteredTag](docs/UnfilteredTag.md)
+ - [Model.UnfilteredTagPartialUpdate](docs/UnfilteredTagPartialUpdate.md)
  - [Model.UpdateQuotaRequest](docs/UpdateQuotaRequest.md)
  - [Model.UploadChunkEndpointRequest](docs/UploadChunkEndpointRequest.md)
  - [Model.UserPreviewRequest](docs/UserPreviewRequest.md)
@@ -796,12 +804,14 @@ Class | Method | HTTP request | Description
  - [Model.WorkflowTransitionResponse](docs/WorkflowTransitionResponse.md)
  - [Model.Workspace](docs/Workspace.md)
  - [Model.WorkspaceCheckIn](docs/WorkspaceCheckIn.md)
+ - [Model.WorkspaceDetail](docs/WorkspaceDetail.md)
+ - [Model.WorkspaceDetailPartialUpdate](docs/WorkspaceDetailPartialUpdate.md)
  - [Model.WorkspaceEndpoint](docs/WorkspaceEndpoint.md)
  - [Model.WorkspaceMoveToRequest](docs/WorkspaceMoveToRequest.md)
- - [Model.WorkspacePartialUpdate](docs/WorkspacePartialUpdate.md)
  - [Model.WorkspacePermission](docs/WorkspacePermission.md)
  - [Model.WorkspacePermissionPartialUpdate](docs/WorkspacePermissionPartialUpdate.md)
  - [Model.WorkspaceResolvedPermission](docs/WorkspaceResolvedPermission.md)
  - [Model.Workstation](docs/Workstation.md)
+ - [Model.WorkstationMini](docs/WorkstationMini.md)
  - [Model.WorkstationPartialUpdate](docs/WorkstationPartialUpdate.md)
 

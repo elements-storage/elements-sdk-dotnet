@@ -117,7 +117,7 @@ namespace ElementsSDK.Model
         /// <param name="webhookSecret">webhookSecret.</param>
         /// <param name="securityContext">securityContext.</param>
         /// <param name="partOfWorkflowFor">partOfWorkflowFor.</param>
-        public Job(List<SubtaskReference> subtasks = default(List<SubtaskReference>), List<ScheduleReference> schedules = default(List<ScheduleReference>), List<ElementsUserReference> allowUsers = default(List<ElementsUserReference>), List<ElementsGroupReference> allowGroups = default(List<ElementsGroupReference>), List<string> variableDefinitions = default(List<string>), List<int> mediaRoots = default(List<int>), SpecialTypeEnum? specialType = default(SpecialTypeEnum?), string name = default(string), bool enabled = default(bool), bool allowOthersToStart = default(bool), bool allowClientToStart = default(bool), bool showAsButton = default(bool), InputTypeEnum? inputType = default(InputTypeEnum?), string hook = default(string), string webhookSecret = default(string), int? securityContext = default(int?), int? partOfWorkflowFor = default(int?))
+        public Job(List<SubtaskReference> subtasks = default(List<SubtaskReference>), List<ScheduleReference> schedules = default(List<ScheduleReference>), List<ElementsUserReference> allowUsers = default(List<ElementsUserReference>), List<ElementsGroupReference> allowGroups = default(List<ElementsGroupReference>), List<Dictionary<string, string>> variableDefinitions = default(List<Dictionary<string, string>>), List<int> mediaRoots = default(List<int>), SpecialTypeEnum? specialType = default(SpecialTypeEnum?), string name = default(string), bool enabled = default(bool), bool allowOthersToStart = default(bool), bool allowClientToStart = default(bool), bool showAsButton = default(bool), InputTypeEnum? inputType = default(InputTypeEnum?), string hook = default(string), string webhookSecret = default(string), int? securityContext = default(int?), int? partOfWorkflowFor = default(int?))
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for Job and cannot be null");
@@ -153,7 +153,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Subtasks
         /// </summary>
@@ -192,12 +191,11 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets VariableDefinitions
         /// </summary>
         [DataMember(Name = "variable_definitions", EmitDefaultValue = false)]
-        public List<string> VariableDefinitions { get; set; }
+        public List<Dictionary<string, string>> VariableDefinitions { get; set; }
 
         /// <summary>
         /// Gets or Sets MediaRoots
@@ -219,7 +217,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Name
         /// </summary>

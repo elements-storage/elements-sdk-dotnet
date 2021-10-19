@@ -65,7 +65,6 @@ namespace ElementsSDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomFieldPartialUpdate" /> class.
         /// </summary>
-        /// <param name="labels">labels.</param>
         /// <param name="options">options.</param>
         /// <param name="name">name.</param>
         /// <param name="order">order.</param>
@@ -82,9 +81,8 @@ namespace ElementsSDK.Model
         /// <param name="highlightExpiration">highlightExpiration.</param>
         /// <param name="multipleResponse">multipleResponse.</param>
         /// <param name="helpText">helpText.</param>
-        public CustomFieldPartialUpdate(List<string> labels = default(List<string>), List<string> options = default(List<string>), string name = default(string), int order = default(int), string type = default(string), bool useForUploads = default(bool), bool requireToUpload = default(bool), bool nonUserEditable = default(bool), ValidationEnum? validation = default(ValidationEnum?), string regex = default(string), int? rangeMin = default(int?), int? rangeMax = default(int?), int? numberOfDigits = default(int?), string metadataPrefill = default(string), bool highlightExpiration = default(bool), bool multipleResponse = default(bool), string helpText = default(string))
+        public CustomFieldPartialUpdate(List<string> options = default(List<string>), string name = default(string), int order = default(int), string type = default(string), bool useForUploads = default(bool), bool requireToUpload = default(bool), bool nonUserEditable = default(bool), ValidationEnum? validation = default(ValidationEnum?), string regex = default(string), int? rangeMin = default(int?), int? rangeMax = default(int?), int? numberOfDigits = default(int?), string metadataPrefill = default(string), bool highlightExpiration = default(bool), bool multipleResponse = default(bool), string helpText = default(string))
         {
-            this.Labels = labels;
             this.Options = options;
             this.Name = name;
             this.Order = order;
@@ -102,12 +100,6 @@ namespace ElementsSDK.Model
             this.MultipleResponse = multipleResponse;
             this.HelpText = helpText;
         }
-
-        /// <summary>
-        /// Gets or Sets Labels
-        /// </summary>
-        [DataMember(Name = "labels", EmitDefaultValue = false)]
-        public List<string> Labels { get; set; }
 
         /// <summary>
         /// Gets or Sets Options
@@ -207,7 +199,6 @@ namespace ElementsSDK.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CustomFieldPartialUpdate {\n");
-            sb.Append("  Labels: ").Append(Labels).Append("\n");
             sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Order: ").Append(Order).Append("\n");
@@ -258,12 +249,6 @@ namespace ElementsSDK.Model
                 return false;
 
             return 
-                (
-                    this.Labels == input.Labels ||
-                    this.Labels != null &&
-                    input.Labels != null &&
-                    this.Labels.SequenceEqual(input.Labels)
-                ) && 
                 (
                     this.Options == input.Options ||
                     this.Options != null &&
@@ -349,8 +334,6 @@ namespace ElementsSDK.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Labels != null)
-                    hashCode = hashCode * 59 + this.Labels.GetHashCode();
                 if (this.Options != null)
                     hashCode = hashCode * 59 + this.Options.GetHashCode();
                 if (this.Name != null)

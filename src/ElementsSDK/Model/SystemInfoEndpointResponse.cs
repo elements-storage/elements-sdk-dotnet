@@ -56,7 +56,7 @@ namespace ElementsSDK.Model
             // to ensure "language" is required (not null)
             this.Language = language ?? throw new ArgumentNullException("language is a required property for SystemInfoEndpointResponse and cannot be null");
             // to ensure "version" is required (not null)
-            this.Version = version ?? throw new ArgumentNullException("version is a required property for SystemInfoEndpointResponse and cannot be null");
+            this._Version = version ?? throw new ArgumentNullException("version is a required property for SystemInfoEndpointResponse and cannot be null");
             // to ensure "globalAlerts" is required (not null)
             this.GlobalAlerts = globalAlerts ?? throw new ArgumentNullException("globalAlerts is a required property for SystemInfoEndpointResponse and cannot be null");
         }
@@ -105,12 +105,11 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
-        /// Gets or Sets Version
+        /// Gets or Sets _Version
         /// </summary>
         [DataMember(Name = "version", IsRequired = true, EmitDefaultValue = false)]
-        public ElementsVersion Version { get; set; }
+        public ElementsVersion _Version { get; set; }
 
         /// <summary>
         /// Gets or Sets GlobalAlerts
@@ -132,7 +131,7 @@ namespace ElementsSDK.Model
             sb.Append("  OffersNtpSync: ").Append(OffersNtpSync).Append("\n");
             sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  SamlProviders: ").Append(SamlProviders).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
+            sb.Append("  _Version: ").Append(_Version).Append("\n");
             sb.Append("  GlobalAlerts: ").Append(GlobalAlerts).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -198,9 +197,9 @@ namespace ElementsSDK.Model
                     this.SamlProviders.SequenceEqual(input.SamlProviders)
                 ) && 
                 (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
+                    this._Version == input._Version ||
+                    (this._Version != null &&
+                    this._Version.Equals(input._Version))
                 ) && 
                 (
                     this.GlobalAlerts == input.GlobalAlerts ||
@@ -229,8 +228,8 @@ namespace ElementsSDK.Model
                     hashCode = hashCode * 59 + this.Language.GetHashCode();
                 if (this.SamlProviders != null)
                     hashCode = hashCode * 59 + this.SamlProviders.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this._Version != null)
+                    hashCode = hashCode * 59 + this._Version.GetHashCode();
                 if (this.GlobalAlerts != null)
                     hashCode = hashCode * 59 + this.GlobalAlerts.GetHashCode();
                 return hashCode;

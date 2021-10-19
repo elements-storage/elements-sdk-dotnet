@@ -42,9 +42,8 @@ namespace ElementsSDK.Model
         /// <param name="supportsWatermark">supportsWatermark.</param>
         /// <param name="supportsTimecodeBurnIn">supportsTimecodeBurnIn.</param>
         /// <param name="supportsAudioChannels">supportsAudioChannels.</param>
-        /// <param name="supportsRealtimeRead">supportsRealtimeRead.</param>
         /// <param name="supportsStagingPath">supportsStagingPath.</param>
-        public ProxyGeneratorProperties(bool supportsVideoBitrate = default(bool), bool supportsVideoCrf = default(bool), bool supportsVideoVbr = default(bool), bool supportsAudioBitrate = default(bool), bool supportsLut = default(bool), bool supportsResolution = default(bool), bool supportsWatermark = default(bool), bool supportsTimecodeBurnIn = default(bool), bool supportsAudioChannels = default(bool), bool supportsRealtimeRead = default(bool), bool supportsStagingPath = default(bool))
+        public ProxyGeneratorProperties(bool supportsVideoBitrate = default(bool), bool supportsVideoCrf = default(bool), bool supportsVideoVbr = default(bool), bool supportsAudioBitrate = default(bool), bool supportsLut = default(bool), bool supportsResolution = default(bool), bool supportsWatermark = default(bool), bool supportsTimecodeBurnIn = default(bool), bool supportsAudioChannels = default(bool), bool supportsStagingPath = default(bool))
         {
             this.SupportsVideoBitrate = supportsVideoBitrate;
             this.SupportsVideoCrf = supportsVideoCrf;
@@ -55,7 +54,6 @@ namespace ElementsSDK.Model
             this.SupportsWatermark = supportsWatermark;
             this.SupportsTimecodeBurnIn = supportsTimecodeBurnIn;
             this.SupportsAudioChannels = supportsAudioChannels;
-            this.SupportsRealtimeRead = supportsRealtimeRead;
             this.SupportsStagingPath = supportsStagingPath;
         }
 
@@ -114,12 +112,6 @@ namespace ElementsSDK.Model
         public bool SupportsAudioChannels { get; set; }
 
         /// <summary>
-        /// Gets or Sets SupportsRealtimeRead
-        /// </summary>
-        [DataMember(Name = "supports_realtime_read", EmitDefaultValue = true)]
-        public bool SupportsRealtimeRead { get; set; }
-
-        /// <summary>
         /// Gets or Sets SupportsStagingPath
         /// </summary>
         [DataMember(Name = "supports_staging_path", EmitDefaultValue = true)]
@@ -142,7 +134,6 @@ namespace ElementsSDK.Model
             sb.Append("  SupportsWatermark: ").Append(SupportsWatermark).Append("\n");
             sb.Append("  SupportsTimecodeBurnIn: ").Append(SupportsTimecodeBurnIn).Append("\n");
             sb.Append("  SupportsAudioChannels: ").Append(SupportsAudioChannels).Append("\n");
-            sb.Append("  SupportsRealtimeRead: ").Append(SupportsRealtimeRead).Append("\n");
             sb.Append("  SupportsStagingPath: ").Append(SupportsStagingPath).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -215,10 +206,6 @@ namespace ElementsSDK.Model
                     this.SupportsAudioChannels.Equals(input.SupportsAudioChannels)
                 ) && 
                 (
-                    this.SupportsRealtimeRead == input.SupportsRealtimeRead ||
-                    this.SupportsRealtimeRead.Equals(input.SupportsRealtimeRead)
-                ) && 
-                (
                     this.SupportsStagingPath == input.SupportsStagingPath ||
                     this.SupportsStagingPath.Equals(input.SupportsStagingPath)
                 );
@@ -242,7 +229,6 @@ namespace ElementsSDK.Model
                 hashCode = hashCode * 59 + this.SupportsWatermark.GetHashCode();
                 hashCode = hashCode * 59 + this.SupportsTimecodeBurnIn.GetHashCode();
                 hashCode = hashCode * 59 + this.SupportsAudioChannels.GetHashCode();
-                hashCode = hashCode * 59 + this.SupportsRealtimeRead.GetHashCode();
                 hashCode = hashCode * 59 + this.SupportsStagingPath.GetHashCode();
                 return hashCode;
             }

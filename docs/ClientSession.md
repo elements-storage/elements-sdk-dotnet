@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **MountedWorkspaces** | **string** |  | [optional] [readonly] 
 **Started** | **DateTime** |  | [optional] [readonly] 
 **LastUpdated** | **DateTime** |  | [optional] [readonly] 
-**Workstation** | **string** |  | 
+**Workstation** | [**WorkstationMini**](WorkstationMini.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

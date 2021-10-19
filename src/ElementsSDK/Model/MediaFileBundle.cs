@@ -69,7 +69,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Asset
         /// </summary>
@@ -89,21 +88,6 @@ namespace ElementsSDK.Model
         public StornextManagerAttributes SnmAttributes { get; set; }
 
         /// <summary>
-        /// Gets or Sets SearchHighlight
-        /// </summary>
-        [DataMember(Name = "search_highlight", EmitDefaultValue = false)]
-        public string SearchHighlight { get; private set; }
-
-        /// <summary>
-        /// Returns false as SearchHighlight should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSearchHighlight()
-        {
-            return false;
-        }
-
-        /// <summary>
         /// Gets or Sets IsShared
         /// </summary>
         [DataMember(Name = "is_shared", EmitDefaultValue = true)]
@@ -117,7 +101,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
@@ -148,7 +131,6 @@ namespace ElementsSDK.Model
             sb.Append("  Asset: ").Append(Asset).Append("\n");
             sb.Append("  Mainfile: ").Append(Mainfile).Append("\n");
             sb.Append("  SnmAttributes: ").Append(SnmAttributes).Append("\n");
-            sb.Append("  SearchHighlight: ").Append(SearchHighlight).Append("\n");
             sb.Append("  IsShared: ").Append(IsShared).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Location: ").Append(Location).Append("\n");
@@ -207,11 +189,6 @@ namespace ElementsSDK.Model
                     this.SnmAttributes.Equals(input.SnmAttributes))
                 ) && 
                 (
-                    this.SearchHighlight == input.SearchHighlight ||
-                    (this.SearchHighlight != null &&
-                    this.SearchHighlight.Equals(input.SearchHighlight))
-                ) && 
-                (
                     this.IsShared == input.IsShared ||
                     this.IsShared.Equals(input.IsShared)
                 ) && 
@@ -248,8 +225,6 @@ namespace ElementsSDK.Model
                     hashCode = hashCode * 59 + this.Mainfile.GetHashCode();
                 if (this.SnmAttributes != null)
                     hashCode = hashCode * 59 + this.SnmAttributes.GetHashCode();
-                if (this.SearchHighlight != null)
-                    hashCode = hashCode * 59 + this.SearchHighlight.GetHashCode();
                 hashCode = hashCode * 59 + this.IsShared.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();

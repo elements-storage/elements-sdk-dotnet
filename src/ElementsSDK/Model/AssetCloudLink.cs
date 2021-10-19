@@ -60,7 +60,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Connection
         /// </summary>
@@ -81,7 +80,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
@@ -96,7 +94,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Asset
         /// </summary>

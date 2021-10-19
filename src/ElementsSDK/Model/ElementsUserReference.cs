@@ -106,7 +106,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets AllowWanLogin
         /// </summary>
@@ -121,7 +120,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets AllowedFsPaths
         /// </summary>
@@ -136,7 +134,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets AllowedFsWritePaths
         /// </summary>
@@ -151,7 +148,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Avatar
         /// </summary>
@@ -166,7 +162,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ClientSessions
         /// </summary>
@@ -181,7 +176,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets DefaultPage
         /// </summary>
@@ -196,7 +190,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets DisplayName
         /// </summary>
@@ -211,7 +204,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets EffectivePermissions
         /// </summary>
@@ -226,7 +218,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
@@ -241,7 +232,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Expiry
         /// </summary>
@@ -256,7 +246,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets AncillaryPathReadOnly
         /// </summary>
@@ -271,7 +260,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets AncillaryPath
         /// </summary>
@@ -286,7 +274,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets FmBookmarks
         /// </summary>
@@ -301,7 +288,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets FullName
         /// </summary>
@@ -316,7 +302,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Gid
         /// </summary>
@@ -331,7 +316,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets GroupPermissions
         /// </summary>
@@ -346,7 +330,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets HasPassword
         /// </summary>
@@ -361,7 +344,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Home
         /// </summary>
@@ -376,7 +358,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets IsExternal
         /// </summary>
@@ -391,7 +372,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets IsCloud
         /// </summary>
@@ -406,7 +386,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets IsCloudDefault
         /// </summary>
@@ -421,7 +400,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets IsEnabled
         /// </summary>
@@ -436,7 +414,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets LastSeen
         /// </summary>
@@ -451,7 +428,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Ldap
         /// </summary>
@@ -466,7 +442,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets LdapDn
         /// </summary>
@@ -481,7 +456,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets PasswordChangeRequired
         /// </summary>
@@ -496,7 +470,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Permissions
         /// </summary>
@@ -511,7 +484,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ShaperCeiling
         /// </summary>
@@ -526,7 +498,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ShaperRate
         /// </summary>
@@ -541,7 +512,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets SyncId
         /// </summary>
@@ -556,7 +526,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets TotpEnabled
         /// </summary>
@@ -571,7 +540,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Uid
         /// </summary>
@@ -586,7 +554,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets UnixUsername
         /// </summary>
@@ -601,7 +568,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Username
         /// </summary>
@@ -616,7 +582,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

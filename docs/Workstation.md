@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**ClientSessions** | [**List&lt;ClientSession&gt;**](ClientSession.md) |  | [optional] [readonly] 
 **DisplayName** | **string** |  | [optional] [readonly] 
 **RdcAllowUsers** | [**List&lt;ElementsUserReference&gt;**](ElementsUserReference.md) |  | [optional] 
 **RdcAllowGroups** | [**List&lt;ElementsGroupReference&gt;**](ElementsGroupReference.md) |  | [optional] 
+**ClientSessions** | [**List&lt;ClientSession&gt;**](ClientSession.md) |  | [optional] [readonly] 
 **Name** | **string** |  | [optional] 
 **Hostname** | **string** |  | 
 **RdcLastUsed** | **DateTime?** |  | [optional] 

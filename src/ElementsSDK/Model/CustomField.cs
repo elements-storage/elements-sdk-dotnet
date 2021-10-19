@@ -70,7 +70,6 @@ namespace ElementsSDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomField" /> class.
         /// </summary>
-        /// <param name="labels">labels (required).</param>
         /// <param name="options">options (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="order">order.</param>
@@ -87,10 +86,8 @@ namespace ElementsSDK.Model
         /// <param name="highlightExpiration">highlightExpiration.</param>
         /// <param name="multipleResponse">multipleResponse.</param>
         /// <param name="helpText">helpText.</param>
-        public CustomField(List<string> labels = default(List<string>), List<string> options = default(List<string>), string name = default(string), int order = default(int), string type = default(string), bool useForUploads = default(bool), bool requireToUpload = default(bool), bool nonUserEditable = default(bool), ValidationEnum? validation = default(ValidationEnum?), string regex = default(string), int? rangeMin = default(int?), int? rangeMax = default(int?), int? numberOfDigits = default(int?), string metadataPrefill = default(string), bool highlightExpiration = default(bool), bool multipleResponse = default(bool), string helpText = default(string))
+        public CustomField(List<string> options = default(List<string>), string name = default(string), int order = default(int), string type = default(string), bool useForUploads = default(bool), bool requireToUpload = default(bool), bool nonUserEditable = default(bool), ValidationEnum? validation = default(ValidationEnum?), string regex = default(string), int? rangeMin = default(int?), int? rangeMax = default(int?), int? numberOfDigits = default(int?), string metadataPrefill = default(string), bool highlightExpiration = default(bool), bool multipleResponse = default(bool), string helpText = default(string))
         {
-            // to ensure "labels" is required (not null)
-            this.Labels = labels ?? throw new ArgumentNullException("labels is a required property for CustomField and cannot be null");
             // to ensure "options" is required (not null)
             this.Options = options ?? throw new ArgumentNullException("options is a required property for CustomField and cannot be null");
             // to ensure "name" is required (not null)
@@ -126,13 +123,20 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Labels
         /// </summary>
-        [DataMember(Name = "labels", IsRequired = true, EmitDefaultValue = false)]
-        public List<string> Labels { get; set; }
+        [DataMember(Name = "labels", EmitDefaultValue = false)]
+        public List<string> Labels { get; private set; }
 
+        /// <summary>
+        /// Returns false as Labels should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeLabels()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Options
         /// </summary>

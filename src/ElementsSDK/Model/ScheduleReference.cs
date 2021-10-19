@@ -132,7 +132,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets NextRun
         /// </summary>
@@ -147,7 +146,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Enabled
         /// </summary>
@@ -162,7 +160,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets LastRun
         /// </summary>
@@ -177,7 +174,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Every
         /// </summary>
@@ -192,7 +188,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets CrontabDayOfMonth
         /// </summary>
@@ -207,7 +202,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets CrontabDayOfWeek
         /// </summary>
@@ -222,7 +216,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets CrontabHour
         /// </summary>
@@ -237,7 +230,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets CrontabMinute
         /// </summary>
@@ -252,7 +244,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets CrontabMonthOfYear
         /// </summary>
@@ -267,7 +258,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Job
         /// </summary>
@@ -282,7 +272,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

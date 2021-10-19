@@ -128,7 +128,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets RequiredArgs
         /// </summary>
@@ -155,7 +154,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets ParametersEditorComponent
         /// </summary>
@@ -188,7 +186,6 @@ namespace ElementsSDK.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets AllowInJobs
         /// </summary>
